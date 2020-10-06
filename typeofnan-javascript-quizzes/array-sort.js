@@ -12,10 +12,17 @@ Options:
 
 */
 
+/*  LINKS
+
+- https://sdras.github.io/array-explorer/
+
+*/
+
 const arr1 = ['a', 'b', 'c'];
+
 const arr2 = ['b', 'c', 'a'];
 
-console.log(arr1.sort() === arr1, arr2.sort() == arr2, arr1.sort() === arr2.sort());
+arr1.sort() === arr1;
 
 /* RESEARCH
 
@@ -72,29 +79,5 @@ const sortedNumbers = [...numbers].sort((a, z) => a - z);
 /* CONCLUSION
 
 It doesn't matter if we use .sort() since we are comparing the reference of each array
-
-*/
-
-const arr1 = ['a', 'b', 'c'];
-const arr2 = ['a', 'b', 'c'];
-
-const firstResult = arr1.sort() === arr1; //? true
-const secondResult = arr2.sort() == arr2; //? true
-const thirdResult = arr1.sort() === arr2.sort(); //? false
-
-// by default arr1.sort() without the compare function will be sorted in ascending order
-// when comparing arrays using loose equality or strict equality we are comparing their references and not the values within them
-// since arr1.sort() mutates the same reference it does not returns a new array
-
-/*
-
-BONUS
-
-TimSort visualization https://www.youtube.com/watch?v=NVIjHj-lrT4
-
-
-I'm using "(a, z) => a - z" instead of "(a, b) => a - b" that you will find in all documentation due to a mnemonic reference
-https://twitter.com/DavidKPiano/status/1292237580780605440
-
 
 */
