@@ -15,12 +15,21 @@ Posibles opciones:
 
 --------------------
 
-Conceptos a entender:
-  - Property Flags
-  - Object.freeze()
+Conceptos a entender
+  1. Property Descriptors
+    - value
+    - enumerable
+    - writable
+    - configurable
 
-Preguntas a hacernos:
-  - Como hacer un objeto totalmente inmutable? Ej: recursividad usando
+  2. Como leer las propiedades de una key usando Object.getOwnPropertyDescriptor(obj, key);
+
+  3. Como definir las propiedades de una key usando Object.defineProperty(obj, key, { ...propiedades });
+
+  4. Que hace Object.freeze(obj) ? Qué propiedades de las keys modifica?
+
+Extra!
+  - Como hacer un objeto totalmente inmutable? Creemos una función recursiva! y probemos nuevamente el challenge...
   - Como crear un nuevo objeto sin modificar el original usando el spread operator?
 
 Links:
