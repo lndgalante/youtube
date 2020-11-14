@@ -29,7 +29,7 @@ Conceptos a entender
   4. Que hace Object.freeze(obj) ? Qué propiedades de las keys modifica?
 
 Extra!
-  - Como hacer un objeto totalmente inmutable? Creemos una función recursiva! y probemos nuevamente el challenge...
+  - Como hacer un objeto totalmente inmutable? Creemos una función recursiva!
   - Como crear un nuevo objeto sin modificar el original usando el spread operator?
 
 Links:
