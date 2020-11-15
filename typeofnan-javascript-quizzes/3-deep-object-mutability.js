@@ -32,8 +32,8 @@ Conceptos a entender:
 
 --------------------
 
-Extra:
-  - Como hacer un objeto totalmente inmutable? Creemos una función recursiva!
+Parte II:
+  - Como hacer un objeto totalmente freezado? Creemos una función recursiva!
   - Como crear un nuevo objeto sin modificar el original usando el spread operator?
 
 Links:
@@ -49,10 +49,4 @@ const user = {
     type: 'dog',
     name: 'Buttercup',
   },
-}
-
-Object.freeze(user)
-
-user.pet.name = 'Daffodil'
-
-console.log(user.pet.name)
+};
