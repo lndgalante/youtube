@@ -55,4 +55,4 @@ Object.freeze(user);
 
 user.pet.name = 'Daffodil';
 
-console.log(user.pet.name);
+console.log('\n: user pet name', user.pet.name);
