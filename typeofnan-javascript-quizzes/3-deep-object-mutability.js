@@ -50,3 +50,9 @@ const user = {
     name: 'Buttercup',
   },
 };
+
+Object.freeze(user);
+
+user.pet.name = 'Daffodil';
+
+console.log(user.pet.name);
