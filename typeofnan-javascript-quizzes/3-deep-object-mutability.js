@@ -5,7 +5,8 @@ Challenge:
 
 Descripción:
   Considerando el siguiente objeto representando un usuario, "Joe", y su perro "Buttercup".
-  Qué sucede si aplicamos el método Object.freeze y posteriormente intentamos mutar el nombre "Buttercup", qué se loguea por pantalla?
+  Qué sucede si aplicamos el método Object.freeze a este objeto y posteriormente intentamos mutar el nombre "Buttercup",
+   qué se loguea por pantalla?
 
 Posibles opciones:
   - Daffodil
