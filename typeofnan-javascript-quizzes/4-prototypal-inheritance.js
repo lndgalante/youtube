@@ -22,16 +22,16 @@ Conceptos a entender:
 
   3. Qué es el prototype?
     a. Donde vive el prototype de una instancia?
-    b. Ejemplo de objeto character, y llamamos a toString(). Qué es el prototype chain?
+    b. Ejemplo de objeto character, y llamamos a toString(). Qué es el prototype chain? (+ Excalidraw)
 
   4. Ejemplo de constructor Person, con propiedad name y hunger.
      Agreguemos un método prototype eat() al prototype.
-     Donde vive este método? Usemos el método hasOwnProperty() para corroborarlo.
+     Donde vive este método? Usemos el método hasOwnProperty() para corroborarlo. (+ Excalidraw)
 
   5. Solución
     a. Qué pasa si logueamos el método speak() de la instancia y del constructor?
     b. Qué pasa si comentamos el método speak() del constructor?
-    c. Conclusión
+    c. Conclusión (+ Excalidraw)
 
   6. Mejores prácticas
     a. Por qué queremos que el método speak() viva en el prototype y no en su constructor?
@@ -83,7 +83,7 @@ console.log(dog.speak());
   a. Donde vive el prototype de una instancia?
     El prototype de una instancia vive en la propiedad "__proto__", y se puede visualizar el mismo en la consola.
 
-  b. Ejemplo de objeto "character" y llamemos a toString(). Qué es el prototype chain?
+  b. Ejemplo de objeto "character" y llamemos a toString(). Qué es el prototype chain? (+ Excalidraw)
     Cuando un cierto método o propiedad es llamado, la búsqueda empieza en el objeto mismo, y si no puede ser encontrada,
     la búsqueda se mueve hacia el prototype del objeto, y así sucesivamente hasta encontrarlo o bien hasta llegar a Object.
 
@@ -101,7 +101,7 @@ console.log(dog.speak());
   b. Qué pasa si comentamos el método speak() del constructor?
     Vemos que por la prototype chain no encuentra el método speak() en su propio objeto y lo va a buscar a su prototype donde si se encuentra y loguea "arf"
 
-  c. Conclusión
+  c. Conclusión (+ Excalidraw)
     Cuando llamamos al método speak() siguiendo la cadena de prototype primero se buscará el método en la misma instancia
     y en caso que no se encuentre posteriormente en su prototype, siguiendo la cadena de prototype,
     en este caso como existe en el mismo objeto se ejecutará este primer método speak.
