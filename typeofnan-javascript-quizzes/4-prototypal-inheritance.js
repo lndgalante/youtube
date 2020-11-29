@@ -12,7 +12,7 @@ Posibles opciones:
   - woof
   - arf
 
---------------------
+------------------------------------------------------------
 
 Conceptos a entender:
   1. Qué es la herencia?
@@ -39,7 +39,7 @@ Conceptos a entender:
     a. Por qué queremos que el método speak() viva en el prototype y no en su constructor?
     b. Como podemos escribir el constructor Dog usando la keyword Class?
 
--------------------
+------------------------------------------------------------
 
 Links:
   - https://quiz.typeofnan.dev/prototypal-inheritance/
