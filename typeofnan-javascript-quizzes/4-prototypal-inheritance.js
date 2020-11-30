@@ -5,7 +5,7 @@ Challenge:
 
 Descripción:
   En esta ocasión, tenemos a un constructor Dog y tanto la instancia como el prototype del constructor conoce el método speak.
-  Qué se loguea por pantalla en el ejemplo cuando le pedimos a nuestra instancia dog llamado "Pogo" que ejecute speak?
+  Qué se loguea por pantalla en el ejemplo cuando le pedimos a nuestra instancia dog que ejecute speak?
 
 Posibles opciones:
   - woof
