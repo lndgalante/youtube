@@ -4,8 +4,8 @@ Challenge:
   Prototypal Inheritance
 
 Descripción:
-  En esta ocasión, tenemos a un constructor Dog y nuestro perro conoce el método speak.
-  Qué se loguea por pantalla en el siguiente ejemplo cuando le pedimos a Pogo que ejecute speak?
+  En esta ocasión, tenemos a un constructor Dog y tanto la instancia como el prototype del constructor conoce el método speak.
+  Qué se loguea por pantalla en el ejemplo cuando le pedimos a nuestra instancia dog llamado "Pogo" que ejecute speak?
 
 Posibles opciones:
   - woof
