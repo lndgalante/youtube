@@ -14,13 +14,15 @@ Posibles opciones:
 ------------------------------------------------------------
 
 Conceptos a entender:
-  1. Tipos de ambientes
+  1. Qué son los ambientes? Tipos de ambientes
 
-  2. APIs de JavaScript, del Navegador y de Node.js
+  2. Qué son los engines?
 
-  3. Creemos una función para conocer en qué ambiente nos encontramos
+  3. Diagrama de APIs de JavaScript, del Navegador, de Node.js y Deno
 
-  4. Solución
+  4. Creemos una función para conocer en qué ambiente nos encontramos
+
+  5. Solución
 
 ------------------------------------------------------------
 
@@ -32,6 +34,34 @@ Extra:
     https://nextjs.org/docs/basic-features/supported-browsers-features#server-side-polyfills
 
 Links:
-  - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- https://quiz.typeofnan.dev/console-log-fetch/
+- https://deno.land/manual@v1.6.0/runtime/web_platform_apis
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+*/
+
+/*
+
+1. Qué son los ambientes? Tipos de ambientes
+    Son aquellos lugares donde nuestro usuario interactua con la aplicación.
+
+    Actualmente a grandes rasgos tenemos 3 ambientes:
+    - Los navegadores (Chrome, Firefox, Safari siendo los más conocidos)
+    - Node.js
+    - Deno
+
+2. Qué son los engines?
+    Estas viven en todos los ambientes ya que la implementación de cada API vive en el engine o motor
+    que necesita correr cada uno de los ambientes para poder además ejecutar el código JavaScript.
+    Siendo el engine más conocido "V8" que son utilizados en Google Chrome, Edge, Brave, Node.js y Deno,
+    SpiderMonkey en Firefox o JavaScriptCore en Safari.
+
+3. Diagrama de APIs de JavaScript, del Navegador, de Node.js y Deno
+
+4. Creemos dos funciones para conocer en qué ambiente nos encontramos
+    a. isNode()
+    b. isBrowserOrDeno()
+
+5. Solución
 
 */
