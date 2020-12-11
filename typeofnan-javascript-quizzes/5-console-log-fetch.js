@@ -4,7 +4,7 @@ Challenge:
   Console log fetch
 
 Descripción:
-  Qué se loguea cuando tratamos de loguear fetch?
+  Qué se muestra por pantalla cuando tratamos de realizar un console.log de fetch?
 
 Posibles opciones:
   - La función fetch
