@@ -60,7 +60,7 @@ console.log(fetch);
     En el desarrollo web no usamos los engines directamente sino que estos viven dentro de un ambiente,
     que además de las APIs de JavaScript que son provistas por el engine, cada ambiente trae consigo
     su set particular de APIs que nos permiten conectar el mundo de alrededor con el engine.
-    Algunos ejemplos de funcionalidades son el acceso a Bluetooth o el acceso sistema de archivos.
+    Algunos ejemplos de APIs de los ambientes son el acceso a Bluetooth o el acceso al sistema de archivos.
 
     a. Tipos de ambientes
        Actualmente a grandes rasgos tenemos 3 ambientes:
