@@ -63,7 +63,6 @@ console.log(fetch);
     Algunos ejemplos de APIs de los ambientes son el acceso a Bluetooth o el acceso al sistema de archivos.
 
     a. Tipos de ambientes
-       Actualmente a grandes rasgos tenemos 3 ambientes:
         - Los navegadores (Chrome, Firefox, Safari siendo los más conocidos)
         - Node.js
         - Deno
