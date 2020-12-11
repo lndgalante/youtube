@@ -36,9 +36,10 @@ Extra:
     https://nextjs.org/docs/basic-features/supported-browsers-features#server-side-polyfills
 
 Links:
-- https://quiz.typeofnan.dev/console-log-fetch/
-- https://deno.land/manual@v1.6.0/runtime/web_platform_apis
-- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Desafio: https://quiz.typeofnan.dev/console-log-fetch/
+- Web APIs en Deno: https://deno.land/manual@v1.6.0/runtime/web_platform_apis
+- Fetch API en MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Demistifying JavaScript engines: https://www.youtube.com/watch?v=vBRpoNb8EBU
 
 */
 
