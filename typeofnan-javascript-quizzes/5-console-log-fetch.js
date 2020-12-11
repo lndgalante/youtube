@@ -40,6 +40,8 @@ Links:
 
 */
 
+console.log(fetch);
+
 /*
 
 
