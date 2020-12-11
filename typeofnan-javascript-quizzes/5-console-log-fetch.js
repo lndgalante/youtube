@@ -40,11 +40,12 @@ Links:
 - Web APIs en Deno: https://deno.land/manual@v1.6.0/runtime/web_platform_apis
 - Fetch API en MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 - ECMA-262: https://www.ecma-international.org/publications/standards/Ecma-262.htm
+- Global Object: https://developer.mozilla.org/en-US/docs/Glossary/Global_object
 - Demistifying JavaScript engines: https://www.youtube.com/watch?v=vBRpoNb8EBU
 
 */
 
-console.log(fetch);
+// console.log(fetch);
 
 /*
 
@@ -70,8 +71,11 @@ console.log(fetch);
     b. Diagrama de APIs de JavaScript, del Navegador, de Node.js y Deno
 
 3. Creemos dos funciones para conocer en qué ambiente nos encontramos
-    a. isNode()
-    b. isBrowserOrDeno()
+    En todos los ambientes hay un objeto global definido, el cuál podemos utilizar para
+    reconocer en que ambiente esta corriendo nuestro código.
+
+      a. isNode()
+      b. isBrowserOrDeno()
 
 4. Solución
 
