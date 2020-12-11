@@ -9,7 +9,7 @@ Descripción:
 Posibles opciones:
   - La función fetch
   - Un error de referencia
-  - Depende según el ambiente que estemos
+  - Depende según el ambiente que estemos corriendo
 
 ------------------------------------------------------------
 
