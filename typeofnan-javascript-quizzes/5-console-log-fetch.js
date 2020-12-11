@@ -29,11 +29,14 @@ Conceptos a entender:
 ------------------------------------------------------------
 
 Extra:
+  - Qué librerías de terceros similares a fetch existen en Node.js?
+    - node-fetch https://www.npmjs.com/package/node-fetch
+
   - Feature request de fetch en Node.js
-    https://github.com/nodejs/node/issues/19393
+      https://github.com/nodejs/node/issues/19393
 
   - Next.js con built-in fetch
-    https://nextjs.org/docs/basic-features/supported-browsers-features#server-side-polyfills
+      https://nextjs.org/docs/basic-features/supported-browsers-features#server-side-polyfills
 
 Links:
 - Desafio: https://quiz.typeofnan.dev/console-log-fetch/
@@ -44,8 +47,6 @@ Links:
 - Demistifying JavaScript engines: https://www.youtube.com/watch?v=vBRpoNb8EBU
 
 */
-
-// console.log(fetch);
 
 /*
 
@@ -77,6 +78,29 @@ Links:
       a. isNode()
       b. isBrowserOrDeno()
 
+*/
+
+function isNode() {
+  return typeof global !== 'undefined';
+}
+
+function isBrowserOrDeno() {
+  return typeof window !== 'undefined';
+}
+
+// console.log(`Estoy en Node.js? ${isNode() ? 'si' : 'no'}`);
+
+// console.log(`Estoy en un navegador o en Deno? ${isBrowserOrDeno() ? 'si' : 'no'}`);
+
+/*
+
 4. Solución
 
+    Posibles opciones:
+      - La función fetch
+      - Un error de referencia
+      X Depende según el ambiente que estemos corriendo
+
 */
+
+console.log(fetch);
