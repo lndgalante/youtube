@@ -39,6 +39,7 @@ Links:
 - Desafio: https://quiz.typeofnan.dev/console-log-fetch/
 - Web APIs en Deno: https://deno.land/manual@v1.6.0/runtime/web_platform_apis
 - Fetch API en MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- ECMA-262: https://www.ecma-international.org/publications/standards/Ecma-262.htm
 - Demistifying JavaScript engines: https://www.youtube.com/watch?v=vBRpoNb8EBU
 
 */
@@ -48,8 +49,8 @@ console.log(fetch);
 /*
 
 1. Qué son los engines?
-    Un engine es un programa responsable de convertir nuestro código fuente a código máquina o bytecode
-    y posteriormente ejectuar este último en la CPU.
+    Un engine es un programa responsable de convertir nuestro código fuente a código máquina o bytecode,
+    además de realizar algunas optimizaciones, y posteriormente ejectuar este último en la CPU.
     Todos los engines implementan las definiciones del lenguaje que son provistas por ECMAScript.
 
     Siendo el engine más conocido "V8" que son utilizados en Google Chrome, Edge, Brave, Node.js y Deno,
