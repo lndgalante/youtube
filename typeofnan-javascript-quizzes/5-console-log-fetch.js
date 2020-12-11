@@ -53,7 +53,7 @@ console.log(fetch);
     Todos los engines implementan las definiciones del lenguaje que son provistas por ECMAScript.
 
     Siendo el engine más conocido "V8" que son utilizados en Google Chrome, Edge, Brave, Node.js y Deno,
-    SpiderMonkey en Firefox o JavaScriptCore o Nitro en Safari.
+    otros que viven en otros navegadores: SpiderMonkey en Firefox y JavaScriptCore o Nitro en Safari.
 
 2. Qué son los ambientes?
     En el desarrollo web no usamos los engines directamente sino que estos viven dentro de un ambiente,
