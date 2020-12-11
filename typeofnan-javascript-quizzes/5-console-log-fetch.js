@@ -50,7 +50,7 @@ console.log(fetch);
 
 1. Qué son los engines?
     Un engine es un programa responsable de convertir nuestro código fuente a código máquina o bytecode,
-    además de realizar algunas optimizaciones, y posteriormente ejectuar este último en la CPU.
+    posteriormente ejecutar este último en la CPU, además de realizar algunas optimizaciones.
     Todos los engines implementan las definiciones del lenguaje que son provistas por ECMAScript.
 
     Siendo el engine más conocido "V8" que son utilizados en Google Chrome, Edge, Brave, Node.js y Deno,
