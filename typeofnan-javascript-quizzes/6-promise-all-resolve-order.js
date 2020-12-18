@@ -16,13 +16,12 @@ Posibles opciones:
 
 Conceptos a entender:
   1. Qué son las Promises?
-      a. Ejemplo con setTimeout
-      b. Ejemplo con fetch
-      c. Ejemplo con XState
+      a. Visualización con XState
+      b. Ejemplo con setTimeout
 
   2. Cómo funciona Promise.all()?
-      a. Cuál es su use case?
-      b. Ejemplo con XState
+      a. Visualización con XState
+      b. Use-case usando RickAndMorty API
 
 ------------------------------------------------------------
 
