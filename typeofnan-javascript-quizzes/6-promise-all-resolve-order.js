@@ -18,17 +18,17 @@ Conceptos a entender:
   1. Qué son las Promises?
       a. Visualización de Lavarropa https://xstate.js.org/viz/?gist=dd07469f72636d3f896c5d260ecc7eec
       b. Visualización de Promise https://xstate.js.org/viz/?gist=76e5db32fd56786a27c317205cf881b2
-      c. Ejemplo de lavarropa con función lavarRopa(), creación y ejecución
+      c. Ejemplo de lavarropa con función cleanClothes(), creación y ejecución
           setTimeout -> wrap con promise
 
   2. Cómo funciona Promise.all()?
       a. Visualización de lavar la ropa y limpiar la pieza
-      b. Ventajas y porqué debería de usarla
-      c. Ejemplo usando la RickAndMorty API
+      b. Ejemplo usando la cleanClothes() y cleanRoom()
 
 ------------------------------------------------------------
 
 Extra:
+  - Ejemplo de Promise.all() usando la RickAndMorty API
   - Caveats de Promise.all() y el nuevo Promise.allSettled()
   - Convirtiendo una instancia de XMLHttpRequest en una Promise
 
@@ -62,3 +62,34 @@ function timer(string) {
         setTimeout -> wrap con promise
 
 */
+
+function cleanClothes() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isClean = false;
+
+      if (isClean === true) {
+        resolve('Clothes are clean');
+      } else {
+        reject('Clothes are still dirty');
+      }
+    }, 2000);
+  });
+}
+
+// cleanClothes()
+//   .then((result) => {
+//     console.log('\n ~ cleanClothes ~ result', result);
+//   })
+//   .catch((error) => {
+//     console.log('\n ~ cleanClothes ~ error', error);
+//   });
+
+/*
+
+2. Cómo funciona Promise.all()?
+    a. Visualización de lavar la ropa y limpiar la pieza
+    b. Ventajas y porqué debería de usarla
+    c. Ejemplo usando la RickAndMorty API
+
+  */
