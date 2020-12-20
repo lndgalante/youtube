@@ -57,7 +57,7 @@ Promise.all([timer('first'), timer('second')]).then((data) => console.log(data))
 /*
 
 Posibles opciones:
-  - ["first", "second"]
+  X ["first", "second"]
   - Es aleatorio (it is random)
 
 */
@@ -120,6 +120,6 @@ function tidyRoom() {
   });
 }
 
-Promise.all([cleanClothes(), tidyRoom()])
-  .then((results) => console.log(results))
-  .catch((error) => console.log(error));
+// Promise.all([cleanClothes(), tidyRoom()])
+//   .then((results) => console.log(results))
+//   .catch((error) => console.log(error));
