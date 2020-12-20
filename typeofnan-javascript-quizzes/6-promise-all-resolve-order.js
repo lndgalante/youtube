@@ -47,19 +47,18 @@ function timer(string) {
   });
 }
 
-Promise.all([timer('first'), timer('second')]).then((data) => console.log(data));
+// Promise.all([timer('first'), timer('second')]).then((data) => console.log(data));
 
 /*
 
 2. Qué son las Promises?
     Una promesa representa un valor que es por el momento desconocido, pero que lo conoceremos en algún momento del futuro.
-    es lo que comúnmente llamamos como valor asíncrónico, por ejemplo cuando pedimos un dato de una API.
 
     a. Visualización de Lavarropa https://xstate.js.org/viz/?gist=dd07469f72636d3f896c5d260ecc7eec
 
     b. Visualización de Promise https://xstate.js.org/viz/?gist=76e5db32fd56786a27c317205cf881b2
 
-    c. Ejemplo de lavarropa con función lavarRopa(), creación y ejecución
+    c. Ejemplo de lavarropa con función cleanClothes(), creación y ejecución
         setTimeout -> wrap con promise
 
 */
