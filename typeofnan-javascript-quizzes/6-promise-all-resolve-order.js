@@ -31,9 +31,16 @@ Extra:
   - Caveats de Promise.all() y el nuevo Promise.allSettled()
   - Convirtiendo una instancia de XMLHttpRequest en una Promise
 
-Links:
+
+Challenge + Código:
+  - https://quiz.typeofnan.dev/promise-all-resolve-order
+  - https://github.com/lndgalante/thinking-through-code/blob/master/typeofnan-javascript-quizzes/6-promise-all-resolve-order.js
+
+Links Principales:
   - https://javascript.info/async
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+Links Secundarios:
   - https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
   - https://dev.to/hem/gif-cheatsheet-for-javascript-promise-api-methods-promise-all-promise-allsettled-promise-race-promise-any-1l2o
 
