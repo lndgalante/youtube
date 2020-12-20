@@ -23,7 +23,6 @@ Conceptos a entender:
 
   2. Cómo funciona Promise.all()?
       a. Visualización de lavar la ropa y limpiar la pieza
-      b. Ejemplo usando la cleanClothes() y cleanRoom()
 
 ------------------------------------------------------------
 
@@ -34,10 +33,9 @@ Extra:
 
 Links:
   - https://javascript.info/async
-  - https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+  - https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
+  - https://dev.to/hem/gif-cheatsheet-for-javascript-promise-api-methods-promise-all-promise-allsettled-promise-race-promise-any-1l2o
 
 */
 
@@ -47,7 +45,15 @@ function timer(string) {
   });
 }
 
-// Promise.all([timer('first'), timer('second')]).then((data) => console.log(data));
+Promise.all([timer('first'), timer('second')]).then((data) => console.log(data));
+
+/*
+
+Posibles opciones:
+  - ["first", "second"]
+  - Es aleatorio (it is random)
+
+*/
 
 /*
 
@@ -66,7 +72,7 @@ function timer(string) {
 function cleanClothes() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const isClean = false;
+      const isClean = true;
 
       if (isClean === true) {
         resolve('Clothes are clean');
@@ -89,7 +95,24 @@ function cleanClothes() {
 
 2. Cómo funciona Promise.all()?
     a. Visualización de lavar la ropa y limpiar la pieza
-    b. Ventajas y porqué debería de usarla
-    c. Ejemplo usando la RickAndMorty API
+    b. Ejemplo usando la cleanClothes() y tidyRoom()
 
-  */
+*/
+
+function tidyRoom() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isTidy = true;
+
+      if (isTidy === true) {
+        resolve('Room is tidy');
+      } else {
+        reject('Room is still a mess');
+      }
+    }, 4000);
+  });
+}
+
+Promise.all([cleanClothes(), tidyRoom()])
+  .then((results) => console.log(results))
+  .catch((error) => console.log(error));
