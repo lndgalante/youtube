@@ -31,7 +31,6 @@ Extra:
   - Caveats de Promise.all() y el nuevo Promise.allSettled()
   - Convirtiendo una instancia de XMLHttpRequest en una Promise
 
-
 Challenge + Solución:
   - https://quiz.typeofnan.dev/promise-all-resolve-order
   - https://github.com/lndgalante/thinking-through-code/blob/master/typeofnan-javascript-quizzes/6-promise-all-resolve-order.js
