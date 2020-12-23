@@ -25,13 +25,13 @@ Conceptos a entender:
 ------------------------------------------------------------
 
 Challenge + Solución:
-  - https://quiz.typeofnan.dev/reduce-math/
+  - https://quiz.typeofnan.dev/reduce-math
 
 Links Principales:
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 Links Secundarios:
-  -
+  - https://doesitmutate.xyz
 
 */
 
