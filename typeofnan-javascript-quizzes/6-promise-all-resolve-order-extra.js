@@ -44,3 +44,24 @@ Links Secundarios:
   - https://dev.to/hem/gif-cheatsheet-for-javascript-promise-api-methods-promise-all-promise-allsettled-promise-race-promise-any-1l2o
 
 */
+
+/*
+  - Ejemplo de Promise.all() usando la RickAndMorty API
+
+    Vamos a crear nuestra función que nos permite obtener todos los personajes de un episodio
+      a. Pedimos los datos del primer capítulo de Rick and Morty
+      b. Usando la key characters vamos a pedir todos los personajes de ese capítulo usando Promise.all()
+
+*/
+
+/*
+  - Caveats de Promise.all() y el nuevo Promise.allSettled()
+
+    - Usemos la misma función pero en el primer personaje escribamos una API manualmente
+    - Visualizaciones de @Hem
+    - Modifiquemos nuestra función para utilizar Promise.allSettled()
+*/
+
+/*
+  - Convirtiendo una instancia de XMLHttpRequest en una Promise
+*/
