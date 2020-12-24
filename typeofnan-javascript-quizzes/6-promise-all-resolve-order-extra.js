@@ -54,14 +54,82 @@ Links Secundarios:
 
 */
 
+const BASE_URL = 'https://rickandmortyapi.com/api';
+
+const get = (url) => fetch(url).then((response) => response.json());
+
+async function getAllCharactersFromEpisode(episode) {
+  const { characters: charactersUrls } = await get(`${BASE_URL}/episode/${episode}`);
+
+  const characterPromises = charactersUrls.map((characterUrl) => get(characterUrl));
+  const charactersInformation = await Promise.all(characterPromises);
+
+  return charactersInformation;
+}
+
+getAllCharactersFromEpisode(1)
+  .then((characters) => {
+    console.log('Displaying all characters from episode one');
+    console.log(characters);
+  })
+  .catch((error) => {
+    console.log('getAllCharactersFromEpisode ~ error', error);
+  });
+
 /*
   - Caveats de Promise.all() y el nuevo Promise.allSettled()
 
     - Usemos la misma función pero en el primer personaje escribamos una API manualmente
-    - Visualizaciones de @Hem
     - Modifiquemos nuestra función para utilizar Promise.allSettled()
 */
+
+async function getAllCharactersFromEpisodeImproved(episode) {
+  const { characters: charactersUrls } = await get(`${BASE_URL}/episode/${episode}`);
+
+  const characterPromises = charactersUrls.map((characterUrl, index) =>
+    get(index === 0 ? `https://rick.com/api/character/1` : characterUrl),
+  );
+  const charactersInformation = await Promise.allSettled(characterPromises);
+
+  return charactersInformation;
+}
+
+getAllCharactersFromEpisodeImproved(1)
+  .then((characters) => {
+    console.log('Displaying all characters from episode one');
+    console.log(characters);
+  })
+  .catch((error) => {
+    console.log('getAllCharactersFromEpisodeImproved ~ error', error);
+  });
 
 /*
   - Convirtiendo una instancia de XMLHttpRequest en una Promise
 */
+
+function xmlHttpRequestPromise() {
+  return new Promise((resolve, reject) => {
+    const BASE_URL = 'https://rickandmortyapi.com/api';
+
+    const request = new XMLHttpRequest();
+
+    request.addEventListener('load', (event) => {
+      resolve(JSON.parse(event.target.response));
+    });
+    request.addEventListener('error', (event) => {
+      reject(event);
+    });
+
+    request.open('GET', `${BASE_URL}/episode/1`);
+
+    request.send();
+  });
+}
+
+xmlHttpRequestPromise()
+  .then((data) => {
+    console.log('\n ~ xmlHttpRequestPromise ~ data', data);
+  })
+  .catch((error) => {
+    console.log('\n ~ xmlHttpRequestPromise ~ error', error);
+  });
