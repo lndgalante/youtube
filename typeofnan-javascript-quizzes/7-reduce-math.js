@@ -41,12 +41,6 @@ Links Secundarios:
 
 */
 
-const array = [(x) => x * 1, (x) => x * 2, (x) => x * 3, (x) => x * 4];
-
-const result = array.reduce((accumulator, fn) => accumulator + fn(accumulator), 1);
-
-// console.log('The result is:', result);
-
 /*
   1. Arrow functions
       Las arrow functions o funciones flechas fueron introducidas en ES6 o ES2015.
@@ -101,3 +95,15 @@ const sumOfNumbers = numbers.reduce((accumulator, number) => accumulator + numbe
 /*
   3. Solución
 */
+
+const array = [(x) => x * 1, (x) => x * 2, (x) => x * 3, (x) => x * 4];
+
+const result = array.reduce((accumulator, fn) => accumulator + fn(accumulator), 1);
+
+// iteration      expression I            expression II     accumulator (initalized at 1)
+// 0              1 + (1) => 1 * 1        1 + 1             2
+// 1              2 + (2) => 2 * 2        2 + 4             6
+// 0              6 + (6) => 6 * 3        6 + 18            24
+// 0              24 + (24) => 24 * 4     24 + 96           120
+
+// console.log('The result is:', result);
