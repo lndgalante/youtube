@@ -50,8 +50,12 @@ Links Secundarios:
         - This heredado por el contexto más cercano
 */
 
-function suma(x, y) {
+function sum(x, y) {
   return x + y;
+}
+
+function randomNumber() {
+  return Math.random();
 }
 
 /*
