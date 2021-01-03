@@ -18,14 +18,17 @@ Conceptos a entender:
   1. Arrow functions
 
   2. Reduce
-    a. Escribiendo nuestro propio reduce
+    a. Definición y visualización de reduce, https://reduce.surge.sh
     b. Ejemplo de suma de números
-    c. Visualización de reduce, https://reduce.surge.sh
-    d. Inmutabilidad, https://doesitmutate.xyz
+    c. Inmutabilidad, https://doesitmutate.xyz
 
   3. Solución
 
 ------------------------------------------------------------
+
+Extra:
+  - Escribiendo nuestro propio reduce
+  - Resolvamos 6 ejercicios usando reduce https://coursework.vschool.io/array-reduce-exercises
 
 Challenge + Solución:
   - https://quiz.typeofnan.dev/reduce-math
@@ -60,18 +63,10 @@ function randomNumber() {
 
 /*
   2. Reduce
-    a. Escribiendo nuestro propio reduce
+    a. Definición y visualización de reduce, https://reduce.surge.sh
 */
 
-function reduce(array, reducer, initialValue) {
-  let accumulator = initialValue;
-
-  for (const element of array) {
-    accumulator = reducer(accumulator, element);
-  }
-
-  return accumulator;
-}
+//  El método reduce se suele utilizar cuando queremos calcular un valor único.
 
 /*
   2. Reduce
@@ -80,20 +75,11 @@ function reduce(array, reducer, initialValue) {
 
 const numbers = [3, 5, 1, 4, 2];
 
-const sumReducer = (accumulator, number) => accumulator + number;
-
-const sumOfNumbersCustom = reduce(numbers, sumReducer, 0);
-
 const sumOfNumbers = numbers.reduce((accumulator, number) => accumulator + number, 0);
 
 /*
   2. Reduce
-    c. Visualización de reduce, https://reduce.surge.sh
-*/
-
-/*
-  2. Reduce
-    d. Inmutabilidad, https://doesitmutate.xyz
+    c. Inmutabilidad, https://doesitmutate.xyz
 */
 
 /*
@@ -104,10 +90,15 @@ const array = [(x) => x * 1, (x) => x * 2, (x) => x * 3, (x) => x * 4];
 
 const result = array.reduce((accumulator, fn) => accumulator + fn(accumulator), 1);
 
-// iteration      expression I            expression II     accumulator (initalized at 1)
-// 0              1 + (1) => 1 * 1        1 + 1             2
-// 1              2 + (2) => 2 * 2        2 + 4             6
-// 0              6 + (6) => 6 * 3        6 + 18            24
-// 0              24 + (24) => 24 * 4     24 + 96           120
-
 // console.log('The result is:', result);
+
+/*
+
+  | iteration  | fn             | expression I         | expression II     | accumulator |
+  |------------|----------------|----------------------|-------------------|-------------|
+  | 0          | (x) => x * 1   | 1 + (1) => 1 * 1     | 1 + 1             | 2           |
+  | 1          | (x) => x * 2   | 2 + (2) => 2 * 2     | 2 + 4             | 6           |
+  | 2          | (x) => x * 3   | 6 + (6) => 6 * 3     | 6 + 18            | 24          |
+  | 3          | (x) => x * 4   | 24 + (24) => 24 * 4  | 24 + 96           | 120         |
+
+ */
