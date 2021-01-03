@@ -62,7 +62,7 @@ Links Secundarios:
 
 const sum = (x, y) => x + y;
 
-console.log('\n ~ sum', sum(2, 2));
+// console.log('\n ~ sum', sum(2, 2));
 
 /* function randomNumber() {
   return Math.random();
@@ -70,7 +70,7 @@ console.log('\n ~ sum', sum(2, 2));
 
 const randomNumber = () => Math.random();
 
-console.log('\n ~ randomNumber', randomNumber());
+// console.log('\n ~ randomNumber', randomNumber());
 
 /*
   2. Reduce
@@ -78,4 +78,5 @@ console.log('\n ~ randomNumber', randomNumber());
 */
 
 //  El método reduce se suele utilizar cuando queremos calcular un valor único a partir de un array.
-//  Ejecuta una función reductora por cada elemento del array, y el resultado de esta función se va asignando a un acumulador.
+//  Ejecuta una función reducer por cada elemento del array, y el resultado de esta función se va asignando a un acumulador.
+//  El cuál este acumulador será recibido por parámetros en la próxima ejecución de la función reducer.
