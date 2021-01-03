@@ -80,3 +80,10 @@ const randomNumber = () => Math.random();
 //  El método reduce se suele utilizar cuando queremos calcular un valor único a partir de un array.
 //  Ejecuta una función reducer por cada elemento del array, y el resultado de esta función se va asignando a un acumulador.
 //  El cuál este acumulador será recibido por parámetros en la próxima ejecución de la función reducer.
+
+const initialValue = 0;
+const values = [3, 5, 1, 4, 2];
+
+const total = values.reduce((acc, item) => {
+  return acc + item;
+}, initialValue);
