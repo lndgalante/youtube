@@ -19,8 +19,7 @@ Conceptos a entender:
 
   2. Reduce
     a. Definición y visualización, https://reduce.surge.sh
-    b. Ejemplo de suma de números
-    c. Inmutabilidad, https://doesitmutate.xyz
+    b. Inmutabilidad, https://doesitmutate.xyz
 
   3. Solución
 
@@ -82,9 +81,34 @@ const randomNumber = () => Math.random();
 //  Ejecuta una función reducer por cada elemento del array, y el resultado de esta función se va asignando al acumulador.
 //  Este último será recibido por parámetros en la próxima ejecución de la función reducer.
 
-const initialValue = 0;
-const values = [3, 5, 1, 4, 2];
+const numbers = [1, 2, 3];
 
-const total = values.reduce((acc, item) => {
-  return acc + item;
-}, initialValue);
+const total = numbers.reduce((accumulator, number) => accumulator + number, 0);
+
+// console.log('\n ~ total', total);
+
+/*
+  2. Reduce
+    b. Inmutabilidad, https://doesitmutate.xyz
+*/
+
+/*
+  3. Solución
+*/
+
+const array = [(x) => x * 1, (x) => x * 2, (x) => x * 3, (x) => x * 4];
+
+const result = array.reduce((accumulator, fn) => accumulator + fn(accumulator), 1);
+
+console.log('The result is:', result);
+
+/*
+
+  | iteration  | fn             | expression I         | expression II     | accumulator |
+  |------------|----------------|----------------------|-------------------|-------------|
+  | 0          | (x) => x * 1   | 1 + (1) => 1 * 1     | 1 + 1             | 2           |
+  | 1          | (x) => x * 2   | 2 + (2) => 2 * 2     | 2 + 4             | 6           |
+  | 2          | (x) => x * 3   | 6 + (6) => 6 * 3     | 6 + 18            | 24          |
+  | 3          | (x) => x * 4   | 24 + (24) => 24 * 4  | 24 + 96           | 120         |
+
+ */
