@@ -53,7 +53,7 @@ Links Secundarios:
         - Sintáxis concisa
         - This heredado por el contexto más cercano
 
-      Se recomienda utilizar las arrow functions en los callbacks y no definir todas las funciones como arrow funcitons.
+      Se recomienda utilizar las arrow functions en los callbacks o en funciones one-liners.
 */
 
 function sum(x, y) {
