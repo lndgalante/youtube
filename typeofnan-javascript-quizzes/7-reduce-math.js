@@ -18,7 +18,7 @@ Conceptos a entender:
   1. Arrow functions
 
   2. Reduce
-    a. Definición y visualización de reduce, https://reduce.surge.sh
+    a. Definición y visualización, https://reduce.surge.sh
     b. Ejemplo de suma de números
     c. Inmutabilidad, https://doesitmutate.xyz
 
@@ -56,10 +56,26 @@ Links Secundarios:
       Se recomienda utilizar las arrow functions en los callbacks o en funciones one-liners.
 */
 
-function sum(x, y) {
+/* function sum(x, y) {
   return x + y;
-}
+} */
 
-function randomNumber() {
+const sum = (x, y) => x + y;
+
+console.log('\n ~ sum', sum(2, 2));
+
+/* function randomNumber() {
   return Math.random();
-}
+} */
+
+const randomNumber = () => Math.random();
+
+console.log('\n ~ randomNumber', randomNumber());
+
+/*
+  2. Reduce
+    a. Definición y visualización de reduce, https://reduce.surge.sh
+*/
+
+//  El método reduce se suele utilizar cuando queremos calcular un valor único a partir de un array.
+//  Ejecuta una función reductora por cada elemento del array, y el resultado de esta función se va asignando a un acumulador.
