@@ -49,6 +49,16 @@ Links Secundarios:
 */
 
 /*
+  Algoritmo:
+
+    1. Recibir 3 parámetros: array, reducer, initialValue
+    2. Inicializar un acumulador usando un valor inicial
+    3. Iterar sobre todos los elementos del array
+    4. Actualizar en cada iteración nuestro acumulador con el nuevo valor devuelto por la función reduce
+    5. Al finalizar la iteración devolver el valor de nuestro acumulador
+*/
+
+/*
   - Resolvamos 5 ejercicios usando reduce
 */
 
