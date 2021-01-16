@@ -48,35 +48,15 @@ Links Secundarios:
   - Escribiendo nuestro propio reduce
 */
 
-const numbers = [1, 2, 3];
-
-const reducer = (accumulator, number) => accumulator + number;
-
-const initialValue = 0;
-
-const total = numbers.reduce(reducer, 0);
-
-function reduce(array, reducer, initialValue) {
-  let accumulator = initialValue;
-
-  for (const element of array) {
-    accumulator = reducer(accumulator, element);
-  }
-
-  return accumulator;
-}
-
 /*
-  - Resolvamos 6 ejercicios usando reduce
+  - Resolvamos 5 ejercicios usando reduce
 */
 
 /*
   1) Convertir un array de números en un cadena de caracteres de todos esos números
 */
 
-function stringConcat(arr) {
-  return arr.reduce((accumulator, number) => `${accumulator}${number}`, '');
-}
+function stringConcat(arr) {}
 
 console.log(stringConcat([1, 2, 3])); // "123"
 
@@ -84,9 +64,7 @@ console.log(stringConcat([1, 2, 3])); // "123"
   2) Convertir un array de votantes en el total de cuantas personas votaron
 */
 
-function totalVotes(arr) {
-  return arr.reduce((accumulator, voter) => (voter.voted === true ? accumulator + 1 : accumulator), 0);
-}
+function totalVotes(arr) {}
 
 const voters = [
   { name: 'Bob', age: 30, voted: true },
@@ -110,10 +88,7 @@ console.log(totalVotes(voters)); // 7
       Usemos la Intl.NumberFormat API para formatear el número en la moneda que querramos.
 */
 
-function shoppingSpree(arr) {
-  const total = arr.reduce((accumulator, wishItem) => accumulator + wishItem.price, 0);
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
-}
+function shoppingSpree(arr) {}
 
 const wishlist = [
   { title: 'Tesla Model S', price: 90000 },
@@ -129,9 +104,7 @@ console.log(shoppingSpree(wishlist)); // 227005
   4) Dado un array de arrays, aplanarlos para convertirlo en un solo array
 */
 
-function flatten(arr) {
-  return arr.reduce((accumulator, array) => [...accumulator, ...array], []);
-}
+function flatten(arr) {}
 
 const arrays = [['1', '2', '3'], [true], [4, 5, 6]];
 
@@ -174,37 +147,7 @@ const voters2 = [
 
 const inRange = (value, min, max) => value >= min && value <= max;
 
-function voterResults(arr) {
-  return arr.reduce(
-    (accumulator, voter) => {
-      const hasVoted = voter.voted === true;
-      const isYoungAge = inRange(voter.age, 18, 25);
-      const isMidAge = inRange(voter.age, 26, 35);
-      const isOldAge = inRange(voter.age, 36, 55);
-
-      const numYoungPeople = isYoungAge ? accumulator.numYoungPeople + 1 : accumulator.numYoungPeople;
-      const numYoungVotes = isYoungAge && hasVoted ? accumulator.numYoungVotes + 1 : accumulator.numYoungVotes;
-
-      const numMidsPeople = isMidAge ? accumulator.numMidsPeople + 1 : accumulator.numMidsPeople;
-      const numMidVotesPeople =
-        isMidAge && hasVoted ? accumulator.numMidVotesPeople + 1 : accumulator.numMidVotesPeople;
-
-      const numOldsPeople = isOldAge ? accumulator.numOldsPeople + 1 : accumulator.numOldsPeople;
-      const numOldVotesPeople =
-        isOldAge && hasVoted ? accumulator.numOldVotesPeople + 1 : accumulator.numOldVotesPeople;
-
-      return { numYoungPeople, numYoungVotes, numMidsPeople, numMidVotesPeople, numOldsPeople, numOldVotesPeople };
-    },
-    {
-      numYoungVotes: 0,
-      numYoungPeople: 0,
-      numMidVotesPeople: 0,
-      numMidsPeople: 0,
-      numOldVotesPeople: 0,
-      numOldsPeople: 0,
-    },
-  );
-}
+function voterResults(arr) {}
 
 console.log(voterResults(voters2));
 
