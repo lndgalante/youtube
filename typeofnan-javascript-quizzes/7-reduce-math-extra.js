@@ -49,16 +49,6 @@ Links Secundarios:
 */
 
 /*
-  Algoritmo:
-
-    1. Recibir 3 parámetros: array, reducer, initialValue
-    2. Inicializar un acumulador usando un valor inicial
-    3. Iterar sobre todos los elementos del array
-    4. Actualizar en cada iteración nuestro acumulador con el nuevo valor devuelto por la función reduce
-    5. Al finalizar la iteración devolver el valor de nuestro acumulador
-*/
-
-/*
   - Resolvamos 5 ejercicios usando reduce
 */
 
@@ -68,7 +58,7 @@ Links Secundarios:
 
 function stringConcat(arr) {}
 
-console.log(stringConcat([1, 2, 3])); // "123"
+// console.log(stringConcat([1, 2, 3])); // "123"
 
 /*
   2) Convertir un array de votantes en el total de cuantas personas votaron
@@ -91,7 +81,7 @@ const voters = [
   { name: 'Zack', age: 19, voted: false },
 ];
 
-console.log(totalVotes(voters)); // 7
+// console.log(totalVotes(voters)); // 7
 
 /*
   3) Dado un array de articulos de tu lista de deseos, obtener cuanto costaría si comprarías todo a la vez.
@@ -108,7 +98,7 @@ const wishlist = [
   { title: 'A second Tesla Model S', price: 90000 },
 ];
 
-console.log(shoppingSpree(wishlist)); // 227005
+// console.log(shoppingSpree(wishlist)); // 227005
 
 /*
   4) Dado un array de arrays, aplanarlos para convertirlo en un solo array
@@ -118,7 +108,7 @@ function flatten(arr) {}
 
 const arrays = [['1', '2', '3'], [true], [4, 5, 6]];
 
-console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
+// console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
 
 /*
   5) Dado un array de potencial votantes, devolver el resultado de los votos
@@ -159,7 +149,7 @@ const inRange = (value, min, max) => value >= min && value <= max;
 
 function voterResults(arr) {}
 
-console.log(voterResults(voters2));
+// console.log(voterResults(voters2));
 
 /*
   Extra, para practicar!
