@@ -103,10 +103,11 @@ console.log(totalVotes(voters)); // 7
 */
 
 function shoppingSpree(arr) {
-  // your code here
+  const total = arr.reduce((accumulator, wishItem) => accumulator + wishItem.price, 0);
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
 }
 
-var wishlist = [
+const wishlist = [
   { title: 'Tesla Model S', price: 90000 },
   { title: '4 carat diamond ring', price: 45000 },
   { title: 'Fancy hacky Sack', price: 5 },
@@ -129,8 +130,7 @@ const arrays = [['1', '2', '3'], [true], [4, 5, 6]];
 console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
 
 /*
-  5) Given an array of potential voters, return an object representing the results of the vote
-    Dado un array de potencial votantes, devolver el resultado de los votos
+  5) Dado un array de potencial votantes, devolver el resultado de los votos
 
     Incluyendo cuantos votantes estaban en la edad:
      - entre 18 y 25
@@ -164,14 +164,44 @@ const voters2 = [
   { name: 'Zack', age: 19, voted: false },
 ];
 
+const inRange = (value, min, max) => value >= min && value <= max;
+
 function voterResults(arr) {
-  // your code here
+  return arr.reduce(
+    (accumulator, voter) => {
+      const hasVoted = voter.voted === true;
+      const isYoungAge = inRange(voter.age, 18, 25);
+      const isMidAge = inRange(voter.age, 26, 35);
+      const isOldAge = inRange(voter.age, 36, 55);
+
+      const numYoungPeople = isYoungAge ? accumulator.numYoungPeople + 1 : accumulator.numYoungPeople;
+      const numYoungVotes = isYoungAge && hasVoted ? accumulator.numYoungVotes + 1 : accumulator.numYoungVotes;
+
+      const numMidsPeople = isMidAge ? accumulator.numMidsPeople + 1 : accumulator.numMidsPeople;
+      const numMidVotesPeople =
+        isMidAge && hasVoted ? accumulator.numMidVotesPeople + 1 : accumulator.numMidVotesPeople;
+
+      const numOldsPeople = isOldAge ? accumulator.numOldsPeople + 1 : accumulator.numOldsPeople;
+      const numOldVotesPeople =
+        isOldAge && hasVoted ? accumulator.numOldVotesPeople + 1 : accumulator.numOldVotesPeople;
+
+      return { numYoungPeople, numYoungVotes, numMidsPeople, numMidVotesPeople, numOldsPeople, numOldVotesPeople };
+    },
+    {
+      numYoungVotes: 0,
+      numYoungPeople: 0,
+      numMidVotesPeople: 0,
+      numMidsPeople: 0,
+      numOldVotesPeople: 0,
+      numOldsPeople: 0,
+    },
+  );
 }
 
-console.log(voterResults(voters2)); // Returned value shown below:
+console.log(voterResults(voters2));
 
 /*
   Extra, para practicar!
-  Usar la API de fetch o librería que creas conveniente y obtener la cantidad total de estrellas que tienen tus repositorios.
-  Usando la GitHub API usando https://api.github.com/users/<YOUR GITHUB USERNAME HERE>/repos
+  Usando la fetch API obtener la cantidad total de estrellas que tienen todos tus repositorios.
+  Usando la GitHub API, en especial el endpoint https://api.github.com/users/<TU USUARIO DE GITHUB>/repos
 */
