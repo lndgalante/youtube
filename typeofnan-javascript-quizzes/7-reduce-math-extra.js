@@ -48,6 +48,14 @@ Links Secundarios:
   - Escribiendo nuestro propio reduce
 */
 
+const numbers = [1, 2, 3];
+
+const reducer = (accumulator, number) => accumulator + number;
+
+const initialValue = 0;
+
+const total = numbers.reduce(reducer, 0);
+
 function reduce(array, reducer, initialValue) {
   let accumulator = initialValue;
 
