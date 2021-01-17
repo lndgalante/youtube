@@ -48,6 +48,14 @@ Links Secundarios:
   - Escribiendo nuestro propio reduce
 */
 
+const array = [1, 2, 3];
+
+const reducer = (accumulator, number) => accumulator + number;
+
+const initialValue = 0;
+
+const total = array.reduce(reducer, initialValue);
+
 /*
   Algoritmo:
 
@@ -58,6 +66,19 @@ Links Secundarios:
     5. Al finalizar la iteración devolver el valor de nuestro acumulador
 */
 
+function reduce(array, reducer, initialValue) {
+  let accumulator = initialValue;
+
+  for (const element of array) {
+    accumulator = reducer(accumulator, element);
+  }
+
+  return accumulator;
+}
+
+const totalValue = reduce([2, 4, 6], (accumulator, number) => accumulator + number, 0);
+// console.log('\n ~ totalValue', totalValue);
+
 /*
   - Resolvamos 5 ejercicios usando reduce
 */
@@ -66,7 +87,9 @@ Links Secundarios:
   1) Convertir un array de números en un cadena de caracteres de todos esos números
 */
 
-function stringConcat(arr) {}
+function stringConcat(arr) {
+  return arr.reduce((accumulator, number) => `${accumulator}${number}`, '');
+}
 
 // console.log(stringConcat([1, 2, 3])); // "123"
 
@@ -74,7 +97,9 @@ function stringConcat(arr) {}
   2) Convertir un array de votantes en el total de cuantas personas votaron
 */
 
-function totalVotes(arr) {}
+function totalVotes(arr) {
+  return arr.reduce((accumulator, voter) => (voter.voted === true ? accumulator + 1 : accumulator), 0);
+}
 
 const voters = [
   { name: 'Bob', age: 30, voted: true },
@@ -98,7 +123,10 @@ const voters = [
       Usemos la Intl.NumberFormat API para formatear el número en la moneda que querramos.
 */
 
-function shoppingSpree(arr) {}
+function shoppingSpree(arr) {
+  const total = arr.reduce((accumulator, item) => accumulator + item.price, 0);
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
+}
 
 const wishlist = [
   { title: 'Tesla Model S', price: 90000 },
@@ -114,7 +142,9 @@ const wishlist = [
   4) Dado un array de arrays, aplanarlos para convertirlo en un solo array
 */
 
-function flatten(arr) {}
+function flatten(arr) {
+  return arr.reduce((accumulator, array) => [...accumulator, ...array], []);
+}
 
 const arrays = [['1', '2', '3'], [true], [4, 5, 6]];
 
@@ -157,12 +187,50 @@ const voters2 = [
 
 const inRange = (value, min, max) => value >= min && value <= max;
 
-function voterResults(arr) {}
+function voterResults(arr) {
+  return arr.reduce(
+    (accumulator, voter) => {
+      const hasVoted = voter.voted === true;
+      const isYoungAge = inRange(voter.age, 18, 25);
+      const isMidAge = inRange(voter.age, 26, 35);
+      const isOldAge = inRange(voter.age, 36, 55);
 
-// console.log(voterResults(voters2));
+      const numYoungPeople = isYoungAge ? accumulator.numYoungPeople + 1 : accumulator.numYoungPeople;
+      const numYoungVotes = isYoungAge && hasVoted ? accumulator.numYoungVotes + 1 : accumulator.numYoungVotes;
+
+      const numMidsPeople = isMidAge ? accumulator.numMidsPeople + 1 : accumulator.numMidsPeople;
+      const numMidVotesPeople =
+        isMidAge && hasVoted ? accumulator.numMidVotesPeople + 1 : accumulator.numMidVotesPeople;
+
+      const numOldsPeople = isOldAge ? accumulator.numOldsPeople + 1 : accumulator.numOldsPeople;
+      const numOldVotesPeople =
+        isOldAge && hasVoted ? accumulator.numOldVotesPeople + 1 : accumulator.numOldVotesPeople;
+
+      return {
+        ...accumulator,
+        numYoungPeople,
+        numYoungVotes,
+        numMidsPeople,
+        numMidVotesPeople,
+        numOldsPeople,
+        numOldVotesPeople,
+      };
+    },
+    {
+      numYoungVotes: 0,
+      numYoungPeople: 0,
+      numMidVotesPeople: 0,
+      numMidsPeople: 0,
+      numOldVotesPeople: 0,
+      numOldsPeople: 0,
+    },
+  );
+}
+
+console.log(voterResults(voters2));
 
 /*
-  Extra, para practicar!
+  En casa, para practicar!
   Usando la fetch API obtener la cantidad total de estrellas que tienen todos tus repositorios.
   Usando la GitHub API, en especial el endpoint https://api.github.com/users/<TU USUARIO DE GITHUB>/repos
 */
