@@ -231,6 +231,7 @@ console.log(voterResults(voters2));
 
 /*
   En casa, para practicar!
-  Usando la fetch API obtener la cantidad total de estrellas que tienen todos tus repositorios.
-  Usando la GitHub API, en especial el endpoint https://api.github.com/users/<TU USUARIO DE GITHUB>/repos
+  Usando la fetch API obtener la cantidad total de estrellas que tienen sus repositorios.
+  Usando la GitHub API, en especial el endpoint de repos:
+  https://api.github.com/users/<TU USUARIO DE GITHUB>/repos
 */
