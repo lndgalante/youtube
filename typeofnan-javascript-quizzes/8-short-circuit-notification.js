@@ -23,25 +23,26 @@ Conceptos a entender:
       - false
 
   2. Conjunción, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
+      a. Ejemplo de && como operador lógico, chequear rango de edad
 
-  3. Visualización
+  3. Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
+      a. Ejemplo de && como operador de control de flujo, permisos a entrada con 2 condiciones
 
-  4. Solución
+  4. Visualización
+
+  5. Solución
 
 ------------------------------------------------------------
-
-Extra:
-  -
 
 Challenge + Solución:
   - https://quiz.typeofnan.dev/short-circuit-notifications
   - https://github.com/lndgalante/youtube/blob/master/typeofnan-javascript-quizzes/8-short-circuit-notification.js
 
 Links Principales:
-  - https://www.joshwcomeau.com/operator-lookup?match=logical-and
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation
 
 Links Secundarios:
-  -
+  - https://www.joshwcomeau.com/operator-lookup?match=logical-and
 
 */
 
@@ -75,15 +76,26 @@ console.log('false', false);
 
 /*
 2. Conjunción, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
-  En resumen si A es verdadero, entonces el operador && devuelve B, de caso contrario devuelve A.
+    a. Ejemplo de && como operador lógico, chequear rango de edad
 */
 
 /*
-3. Visualización
+3. Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
+    En resumen si A es verdadero, entonces el operador && devuelve B, de caso contrario devuelve A.
+    Sabemos que los valores que A puede tomar para ser verdadero son todos los que no estan incluidos en los falsy values vistos.
+    Lo importante a conocer del corto-circuito es que si el valor de A es falso entonces B no se va a evaluar.
+
+    a. Ejemplo de && como operador de control de flujo, permisos a entrada con 2 condiciones, y por último devolver ticket
+*/
+
+/*
+4. Visualización
   Testiemos los valores verdaderos
 */
 
 /*
-4. Solución
-  Compilemos mentalmente y después usemos el visualizador para ver que nos devuelve "notifications !== 1 && 's'"
+5. Solución
+  Hagamos un pequeño refactor al código.
+  Pensemos que nos devuelve la expresión "hasManyNotifications && 's'".
+  Usemos el visualizador para ver que nos devuelve la expresión anterior.
 */
