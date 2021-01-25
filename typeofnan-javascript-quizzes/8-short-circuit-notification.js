@@ -57,7 +57,7 @@ const notifications = 1;
     - false
 */
 
-console.log('JS - Falsy values - Seven in Total');
+console.log('JS - Falsy values - Six in Total');
 
 /*
 2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
