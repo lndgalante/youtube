@@ -45,7 +45,7 @@ Links Secundarios:
 
 const notifications = 1;
 
-console.log(`You have ${notifications} notification${notifications !== 1 && 's'}`);
+// console.log(`You have ${notifications} notification${notifications !== 1 && 's'}`);
 
 /*
 1. Valores falsos o falsy values
@@ -58,18 +58,6 @@ console.log(`You have ${notifications} notification${notifications !== 1 && 's'}
 */
 
 console.log('JS - Falsy values - Seven in Total');
-
-console.log('Empty string', Boolean(''));
-
-console.log('Number zero', Boolean(0));
-
-console.log('NaN', Boolean(NaN));
-
-console.log('null', Boolean(null));
-
-console.log('undefined', Boolean(undefined));
-
-console.log('false', false);
 
 /*
 2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
