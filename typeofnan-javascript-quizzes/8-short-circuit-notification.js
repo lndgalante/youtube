@@ -22,7 +22,7 @@ Conceptos a entender:
       - undefined
       - false
 
-  2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
+  2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=6675477808807936,kk5ywu_v7TBxrYfFadQKtw
       a. Ejemplo de && como operador lógico y control de flujo, permisos a entrada con 2 condiciones
 
   3. Visualización
