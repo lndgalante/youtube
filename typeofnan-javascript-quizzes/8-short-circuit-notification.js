@@ -83,9 +83,9 @@ console.log('false', Boolean(false));
 */
 
 const age = 16;
-const hasNationalDocument = false;
+const hasVipPass = false;
 
-if (age > 18 && hasNationalDocument === true) {
+if (age > 18 && hasVipPass === true) {
   console.log('Puede entrar al bar');
 } else {
   console.log('Entrada denegada');
