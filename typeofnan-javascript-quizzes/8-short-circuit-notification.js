@@ -56,8 +56,21 @@ const notifications = 1;
     - undefined
     - false
 */
-
+/*
 console.log('JS - Falsy values - Six in Total');
+
+console.log('Empty string', Boolean(''));
+
+console.log('Number zero', Boolean(0));
+
+console.log('NaN', Boolean(NaN));
+
+console.log('undefined', Boolean(undefined));
+
+console.log('null', Boolean(null));
+
+console.log('false', Boolean(false));
+ */
 
 /*
 2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
@@ -74,6 +87,8 @@ const hasNationalDocument = false;
 
 if (age > 18 && hasNationalDocument === true) {
   console.log('Puede entrar al bar');
+} else {
+  console.log('Entrada denegada');
 }
 
 /*
