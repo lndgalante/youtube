@@ -23,8 +23,7 @@ Conceptos a entender:
       - false
 
   2. Conjunción y Corto-circuito, tabla de verdad https://excalidraw.com/#json=5524765540352000,bs0gr5NJ-e_HBOXVxVLrBQ
-      a. Ejemplo de && como operador lógico, chequear rango de edad
-      b. Ejemplo de && como operador de control de flujo, permisos a entrada con 2 condiciones
+      a. Ejemplo de && como operador lógico y control de flujo, permisos a entrada con 2 condiciones
 
   3. Visualización
 
@@ -78,10 +77,16 @@ console.log('false', false);
     Sabemos que los valores que A puede tomar para ser verdadero son todos los que no estan incluidos en los falsy values vistos.
     Lo importante a conocer del corto-circuito es que si el valor de A es falso entonces B no se va a evaluar.
 
-    a. Ejemplo de && como operador lógico, chequear rango de edad
-    b. Ejemplo de && como operador de control de flujo, permisos a entrada con 2 condiciones, y por último devolver ticket
+    a. Ejemplo de && como operador lógico y control de flujo, permisos a entrada con 2 condiciones
 
 */
+
+const age = 16;
+const hasNationalDocument = false;
+
+if (age > 18 && hasNationalDocument === true) {
+  console.log('Puede entrar al bar');
+}
 
 /*
 3. Visualización
