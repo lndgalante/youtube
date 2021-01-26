@@ -31,6 +31,9 @@ Conceptos a entender:
 
 ------------------------------------------------------------
 
+Extra:
+  - Ejercicios de práctica
+
 Challenge + Solución:
   - https://quiz.typeofnan.dev/short-circuit-notifications
   - https://github.com/lndgalante/youtube/blob/master/typeofnan-javascript-quizzes/8-short-circuit-notification.js
@@ -110,3 +113,20 @@ const notifications = 4;
 const hasManyNotifications = notifications > 1;
 
 console.log(`You have ${notifications} notification${hasManyNotifications ? 's' : ''}`);
+
+/*
+Extra:
+  - Ejercicios de práctica
+*/
+
+// 1. Que devuelve el siguiente log?
+
+const date = new Date();
+
+console.log(date.getFullYear() === 2021 && date.getMonth() === 0 && 'Enero 2021!');
+
+// 2. Que debo de hacer para mostrar el último string?
+const isBeachOpen = true;
+const celsiusDegrees = 22;
+
+console.log(celsiusDegrees > 25 && isBeachOpen === true && 'Vayamos a la playa!');
