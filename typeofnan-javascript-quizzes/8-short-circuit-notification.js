@@ -39,6 +39,7 @@ Links Principales:
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation
 
 Links Secundarios:
+  - https://javascript.info/logical-operators#and
   - https://www.joshwcomeau.com/operator-lookup?match=logical-and
 
 */
