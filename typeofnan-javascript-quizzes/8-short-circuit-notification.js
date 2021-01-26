@@ -43,10 +43,6 @@ Links Secundarios:
 
 */
 
-const notifications = 1;
-
-// console.log(`You have ${notifications} notification${notifications !== 1 && 's'}`);
-
 /*
 1. Valores falsos o falsy values
     - String vacio o empty string
@@ -82,23 +78,34 @@ console.log('false', Boolean(false));
 
 */
 
-const age = 16;
-const hasVipPass = false;
+/* const age = 19;
+const hasVipPass = true;
 
 if (age > 18 && hasVipPass === true) {
   console.log('Puede entrar al bar');
 } else {
   console.log('Entrada denegada');
-}
+} */
 
 /*
 3. Visualización
-    Testiemos los valores verdaderos
+    Testiemos los valores falsos y alguno verdadero
 */
 
 /*
 4. Solución
-    Hagamos un pequeño refactor al código.
-    Pensemos que nos devuelve la expresión "hasManyNotifications && 's'".
-    Usemos el visualizador para ver que nos devuelve la expresión anterior.
+    a. Hagamos un pequeño refactor al código.
+    b. Pensemos que nos devuelve la expresión "hasManyNotifications && 's'".
+    c. Usemos el visualizador para ver que nos devuelve la expresión anterior.
+
+  Posibles opciones:
+    - You have 1 notification
+    - You have 1 notifications
+    - Something else
 */
+
+const notifications = 4;
+
+const hasManyNotifications = notifications > 1;
+
+console.log(`You have ${notifications} notification${hasManyNotifications ? 's' : ''}`);
