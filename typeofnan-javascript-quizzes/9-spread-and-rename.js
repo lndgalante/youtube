@@ -21,7 +21,8 @@ Conceptos a entender:
     a. Qué es el operador spread?
     b. Cómo se utiliza?
 
-  3. Solución
+  4. Solución
+    a. Diagrama en Whimsical
 
 ------------------------------------------------------------
 
@@ -30,19 +31,19 @@ Challenge + Solución:
   - https://github.com/lndgalante/youtube/blob/master/typeofnan-javascript-quizzes/9-spread-and-rename.js
 
 Links Principales:
-  -
+  - https://github.com/HackYourFutureBelgium/just-javascript/tree/master/08-mutation
 
 Links Secundarios:
   -
 
 */
 
-const arr1 = [{ firstName: 'James' }];
-const arr2 = [...arr1];
+const firstArray = [{ firstName: 'James' }];
+const secondArray = [...firstArray];
 
-arr2[0].firstName = 'Jonah';
+secondArray[0].firstName = 'Jonah';
 
-console.log(arr1);
+console.log(firstArray);
 
 /*
 
@@ -52,12 +53,10 @@ console.log(arr1);
       Por ej un iterable puede ser un string, un array, y un Set.
 
     b. Cómo se utiliza?
-        const abcCharacters = new Set(['a', 'b', 'c'])
+        const characters = ['a', 'b', 'c']
+        const characters2 = ['d', 'e', 'f']
 
-        const characters = ['d', 'e', 'f']
-        const characters2 = ['g', 'h', 'i']
-
-        const allCharacters = [...abcCharacters, ...characters, ...characters2]
+        const allCharacters = [...characters, ...characters2]
         console.log('allCharacters', allCharacters)
 
   */
