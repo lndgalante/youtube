@@ -65,7 +65,7 @@ Tipos de Referencia
   - Function
 
 Cuando almancenamos un valor primitivo en una variable, es este mismo el que se almacena en la variable.
-En cambio cuando almacenamos objetos (Arrays, Objetos, Funciones) son la dirección en memoria donde se almacena ese objeto.
+En cambio cuando almacenamos objetos (Arrays, Objetos, Funciones) son la dirección en memoria donde se encuentra ese objeto.
 
 Características de los tipos de valores o datos primitivos:
 
@@ -84,39 +84,10 @@ Características de los tipos de referencia:
 */
 
 // Datos Primitivos: Inmutabilidad
-let firstNumber = 1;
-
-firstNumber++;
-console.log('firstNumber', firstNumber);
 
 // Datos Primitivos: Copia por valor
-let secondNumber = firstNumber;
-secondNumber += 1;
-console.log('\n ~ firstNumber', firstNumber);
-console.log('\n ~ secondNumber', secondNumber);
 
 // Datos Primitivos: Comparación por valor
-console.log('Is firstNumber equal to secondNumber', firstNumber === secondNumber);
-
-// -----------------------------------------------------------------------------------
-
-// Objetos: Mutabilidad
-let firstNumberObject = { value: 1 };
-let secondNumberObject = firstNumberObject;
-
-secondNumberObject.value += 1;
-
-firstNumberObject.value = 4;
-console.log('\n ~ firstNumberObject', firstNumberObject);
-
-// Objetos: Copia por referencia
-// let secondNumberObject = firstNumberObject;
-secondNumberObject.value += 1;
-console.log('\n ~ firstNumberObject', firstNumberObject);
-console.log('\n ~ secondNumberObject', secondNumberObject);
-
-// Objetos: Comparación por referencia
-console.log('Is firstNumberObject equal to secondNumberObject', firstNumberObject === secondNumberObject);
 
 /*
 1. Valores y Referencia
@@ -134,22 +105,6 @@ Cuando pasamos un objeto por parámetros este es copiado por referencia como tam
 lo cuál significa que en este caso si modificará al objeto que se encuentra fuera de la función.
 */
 
-function incrementPrimitive(number) {
-  number += 1;
-}
-
-console.log('Before incrementPrimitive() call', firstNumber);
-incrementPrimitive(firstNumber);
-console.log('After incrementPrimitive() call', firstNumber);
-
-function incrementObject(number) {
-  number.value += 1;
-}
-
-console.log('Before incrementObject() call', firstNumberObject);
-incrementObject(firstNumberObject);
-console.log('After incrementObject() call', firstNumberObject);
-
 /*
 2. Operador spread (operador de propagación)
   a. Qué es el operador spread?
@@ -164,33 +119,14 @@ console.log('After incrementObject() call', firstNumberObject);
 */
 
 /*
-const numbers = [1, 2, 3];
-const numbers2 = [4, 5, 6];
-
-const allNumbers = [...numbers, ...numbers2];
-console.log('allNumbers', allNumbers);
-*/
-
-/*
 3. Solución
   a. Diagrama en Whimsical -> https://whimsical.com/youtube-UHP1pRc5k3txvDHNdcHLvp@2Ux7TurymP1TRFgscDus
 */
-
-const firstArray = [{ firstName: 'James' }];
-const secondArray = [...firstArray];
-
-secondArray[0].firstName = 'Jonah';
-
-console.log(firstArray);
 
 /*
 Extra:
   - Como crear una nueva copia del array y del objeto?
 */
-
-const thirdArray = [{ ...firstArray[0] }];
-
-const fourthArray = firstArray.map((person) => ({ ...person }));
 
 /*
 Extra:
@@ -198,8 +134,3 @@ Extra:
   Crear una nueva estructura llamada "newCopy" a partir de "maths"
   para que cuando modifique la key notes, no modifique la estructura anterior "maths"
 */
-
-const maths = {
-  notes: [8, 8, 7],
-  student: 'Tommy Maximoff',
-};
