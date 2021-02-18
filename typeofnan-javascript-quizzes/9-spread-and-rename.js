@@ -84,10 +84,39 @@ Características de los tipos de referencia:
 */
 
 // Datos Primitivos: Inmutabilidad
+let firstNumber = 1;
+let secondNumber = firstNumber;
+
+firstNumber.toString();
+// console.log('\n ~ firstNumber', firstNumber);
+// console.log('\n ~ firstNumber', typeof firstNumber);
 
 // Datos Primitivos: Copia por valor
+// let secondNumber = firstNumber;
+
+secondNumber += 1;
+// console.log('\n ~ firstNumber', firstNumber);
+// console.log('\n ~ secondNumber', secondNumber);
 
 // Datos Primitivos: Comparación por valor
+// console.log('Is firstNumber equal to secondNumber', firstNumber === secondNumber);
+
+// Tipos de Referencia: Mutabilidad
+let firstNumberObject = { value: 1 };
+
+firstNumberObject.value += 1;
+// console.log('\n ~ firstNumberObject', firstNumberObject);
+
+// Tipos de Referencia: Copia por Referencia
+let secondNumberObject = firstNumberObject;
+
+secondNumberObject.value += 1;
+
+// console.log('\n ~ firstNumberObject', firstNumberObject);
+// console.log('\n ~ secondNumberObject', secondNumberObject);
+
+// Tipos de Referencia: Comparación por Referencia
+// console.log('Is firstNumberObject is equal secondNumberObject', firstNumberObject === secondNumberObject);
 
 /*
 1. Valores y Referencia
@@ -105,6 +134,26 @@ Cuando pasamos un objeto por parámetros este es copiado por referencia como tam
 lo cuál significa que en este caso si modificará al objeto que se encuentra fuera de la función.
 */
 
+function incrementPrimitive(num) {
+  num += 1;
+}
+
+let number = 2;
+
+// console.log('\n ~ before number', number);
+incrementPrimitive(number);
+// console.log('\n ~ after number', number);
+
+function incrementObject(numObject) {
+  numObject.value += 1;
+}
+
+let numberObject = { value: 4 };
+
+// console.log('\n ~ before numberObject', numberObject);
+incrementObject(numberObject);
+// console.log('\n ~ after numberObject', numberObject);
+
 /*
 2. Operador spread (operador de propagación)
   a. Qué es el operador spread?
@@ -115,12 +164,32 @@ lo cuál significa que en este caso si modificará al objeto que se encuentra fu
 
 /*
 2. Operador spread (operador de propagación)
-  b. Ejemplo de abcedario
+  b. Ejemplo de números
 */
+
+let numbers = [1, 2, 3];
+let numbers2 = [4, 5, 6];
+
+let allNumbers = [...numbers, ...numbers2];
+// console.log('\n ~ allNumbers', allNumbers);
 
 /*
 3. Solución
   a. Diagrama en Whimsical -> https://whimsical.com/youtube-UHP1pRc5k3txvDHNdcHLvp@2Ux7TurymP1TRFgscDus
+*/
+
+const firstArray = [{ firstName: 'James' }];
+const secondArray = [...firstArray];
+
+secondArray[0].firstName = 'Jonah';
+
+// console.log(firstArray);
+
+/*
+Posibles opciones:
+  - [{ firstName: "James" }]
+  - [{ firstName: "Jonah" }]
+  - Something else
 */
 
 /*
@@ -128,9 +197,18 @@ Extra:
   - Como crear una nueva copia del array y del objeto?
 */
 
+const thirdArray = [{ ...firstArray[0] }];
+
+const fourthArray = firstArray.map((person) => ({ ...person }));
+
 /*
 Extra:
   - Ejercicio de práctica
   Crear una nueva estructura llamada "newCopy" a partir de "maths"
   para que cuando modifique la key notes, no modifique la estructura anterior "maths"
 */
+
+const maths = {
+  notes: [8, 8, 7],
+  student: 'Tommy Maximoff',
+};
