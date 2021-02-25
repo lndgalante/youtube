@@ -1,0 +1,9 @@
+{
+  "name": "typeofnan-javascript-quizzes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.map": "^4.6.0"
+  }
+}
