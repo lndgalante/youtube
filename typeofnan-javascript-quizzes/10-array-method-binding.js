@@ -27,7 +27,7 @@ Conceptos a entender:
 ------------------------------------------------------------
 
 Extra:
-  - Bindeo automático con arrow functions. Ejemplo con React
+  - Pregunta de entrevista
 
 Challenge + Solución:
   - https://quiz.typeofnan.dev/array-method-binding
@@ -132,3 +132,23 @@ const newMap = ['a', 'b', 'c'].map.bind([1, 2, 3]);
 newMap((element) => {
   console.log(element);
 });
+
+/*
+Extra:
+  - Pregunta de entrevista
+*/
+
+/*
+const hero = {
+  name: 'Iron Man',
+  superPower: 'Intelligence',
+  displaySuperPower: function () {
+    console.log(`${this.name} super power is his ${this.superPower}`);
+  },
+};
+
+const anotherSuperPower = hero.displaySuperPower;
+
+console.log(anotherSuperPower());
+console.log(hero.displaySuperPower());
+*/
