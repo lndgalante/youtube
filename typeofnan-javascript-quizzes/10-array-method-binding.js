@@ -33,6 +33,9 @@ Challenge + Solución:
   - https://quiz.typeofnan.dev/array-method-binding
   - https://github.com/lndgalante/youtube/blob/master/typeofnan-javascript-quizzes/10-array-method-binding.js
 
+Videos Relacionados:
+  - 4 - Prototypal Inheritance | ¿Cómo funciona la herencia en JavaScript? https://www.youtube.com/watch?v=JNZFCp-PbJM
+
 Links Principales:
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind
