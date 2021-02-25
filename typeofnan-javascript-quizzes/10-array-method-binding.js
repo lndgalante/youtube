@@ -17,7 +17,7 @@ Posibles opciones:
 Conceptos a entender:
   1. Método map
 
-  2. Bind
+  2. Bind -> Diagrama https://excalidraw.com/#json=5903141824364544,I86pkXOFicUP-yN9gs76qg
     a. Qué es el this? Ejemplo de función coolestDeveloper()
     b. Qué hace el método bind()? Ejemplo de función coolestDeveloper()
     c. Cómo funciona el this en las arrow functions?
@@ -75,6 +75,15 @@ const developer = {
   El método bind() nos devuelve una función y pasamos por parámetro un objeto
   el cuál el this de la función ahora apuntará a este objeto.
 */
+
+const developer2 = {
+  name: 'John',
+  mainLanguage: 'Ruby',
+};
+
+const displayRubyLanguage = developer.displayMainLanguage.bind(developer2);
+
+displayRubyLanguage();
 
 /*
 function coolestDeveloper() {
