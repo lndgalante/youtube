@@ -63,7 +63,7 @@ const numbersMultipliedByTwo = numbers.map((number) => number * 2);
 
 console.log('this', this);
 
-const developer = {
+const goDeveloper = {
   name: 'Travis',
   mainLanguage: 'Go',
   displayMainLanguage: function () {
@@ -77,14 +77,16 @@ const developer = {
 
   El método bind() nos devuelve una función y pasamos por parámetro un objeto
   el cuál el this de la función ahora apuntará a este objeto.
+
+  Qué sucede cuando llamamos a displayRubyLanguage sin bindeaarlo? (Posible pregunta de entrevista)
 */
 
-const developer2 = {
+const rubyDeveloper = {
   name: 'John',
   mainLanguage: 'Ruby',
 };
 
-const displayRubyLanguage = developer.displayMainLanguage.bind(developer2);
+const displayRubyLanguage = goDeveloper.displayMainLanguage.bind(rubyDeveloper);
 
 displayRubyLanguage();
 
@@ -144,23 +146,3 @@ const newMap = ['a', 'b', 'c'].map.bind([1, 2, 3]);
 newMap((element) => {
   console.log(element);
 });
-
-/*
-Extra:
-  - Pregunta de entrevista
-*/
-
-/*
-const hero = {
-  name: 'Iron Man',
-  superPower: 'Intelligence',
-  displaySuperPower: function () {
-    console.log(`${this.name} super power is his ${this.superPower}`);
-  },
-};
-
-const anotherSuperPower = hero.displaySuperPower;
-
-console.log(anotherSuperPower());
-console.log(hero.displaySuperPower());
-*/
