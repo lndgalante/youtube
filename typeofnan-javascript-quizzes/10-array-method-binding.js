@@ -1,3 +1,4 @@
+function cook() {}
 /*
 
 Challenge:
@@ -16,11 +17,13 @@ Posibles opciones:
 
 Conceptos a entender:
   1. Método map
+      a. Ejemplo con emojis
+      b. Ejemplo con números
+      c. Genera una mutación o dicho de otra manera es este método inmutable? https://doesitmutate.xyz/map
 
   2. Bind -> Diagrama https://excalidraw.com/#json=5903141824364544,I86pkXOFicUP-yN9gs76qg
     a. Qué es el this? Ejemplo de función coolestDeveloper()
     b. Qué hace el método bind()? Ejemplo de función coolestDeveloper()
-    c. Cómo funciona el this en las arrow functions?
 
   3. Solución
 
@@ -47,29 +50,64 @@ Links Secundarios:
 
 /*
 1. Método map
+  a. Ejemplo con emojis
 */
 
-const numbers = [2, 4, 6];
+const cookedFood = ['🥔', '🌽', '🥚'].map(cook); // ['🍟', '🍿', '🍳'];
+
+/*
+1. Método map
+  b. Ejemplo con números
+*/
+
+const numbers = [1, 2, 3];
 
 const numbersMultipliedByTwo = numbers.map((number) => number * 2);
+
+// console.log('\n ~ numbersMultipliedByTwo', numbersMultipliedByTwo);
+
+/*
+1. Método map
+  c. Genera una mutación o dicho de otra manera es este método inmutable? https://doesitmutate.xyz/map
+  El método map es inmutable, por ende no modifica el array al cuál aplicamos este método, sino que nos devuelve un array nuevo.
+*/
+
+/*
+2. Bind
+  a. Qué es el scope?
+
+  El scope es el lugar donde nosotros definimos nuestras variables o constantes.
+*/
+
+/*
+let pet = 'Cat';
+
+if (pet === 'Cat') {
+  let message = 'meow';
+  console.log('\n ~ message', message);
+}
+
+console.log('\n ~ message', message);
+*/
 
 /*
 2. Bind
   a. Qué es el this?
 
-  El this es un objeto que varia según el contexto donde es llamado.
+  El this es un objeto que varia según el contexto donde llamemos la mismo.
   Si estamos en el scope global el this en los navegadores será el Window object.
 */
 
-console.log('this', this);
-
-const goDeveloper = {
-  name: 'Travis',
+/* const goDeveloper = {
+  name: 'Lele',
   mainLanguage: 'Go',
   displayMainLanguage: function () {
     console.log(`My favourite language is ${this.mainLanguage}`);
   },
 };
+
+goDeveloper.displayMainLanguage();
+ */
 
 /*
 2. Bind
@@ -81,68 +119,54 @@ const goDeveloper = {
   Qué sucede cuando llamamos a displayRubyLanguage sin bindeaarlo? (Posible pregunta de entrevista)
 */
 
-const rubyDeveloper = {
-  name: 'John',
-  mainLanguage: 'Ruby',
-};
-
-const displayRubyLanguage = goDeveloper.displayMainLanguage.bind(rubyDeveloper);
-
-displayRubyLanguage();
-
-/*
 function coolestDeveloper() {
   console.log(`The coolest developer is ${this.name}`);
 }
 
-coolestDeveloper();
+// coolestDeveloper();
 
 const gameDeveloper = { name: 'John Carmack' };
 
 const coolestGameDeveloper = coolestDeveloper.bind(gameDeveloper);
 
-coolestGameDeveloper();
-*/
+// coolestGameDeveloper();
 
-/*
-2. Bind
-  c. Cómo funciona el this en las arrow functions?
-    - Ejemplo de función coolestDeveloper2()
-
-  Las arrow functions heredan el this de su contexto más cercano
-  En nuestro caso el this es el this global, siendo el window object.
-  No podemos usar el método bind en las arrow functions.
-*/
-
-/*
- const coolestDeveloper2 = () => {
-  console.log(`The coolest developer is ${this.name}`);
+const goDeveloper = {
+  name: 'Lele',
+  mainLanguage: 'Go',
+  displayMainLanguage: function () {
+    console.log(`My favourite language is ${this.mainLanguage}`);
+  },
 };
 
-const softDeveloper = { name: 'Linus Torvalds' };
+const rubyDeveloper = {
+  name: 'Hugo',
+  mainLanguage: 'Ruby',
+};
 
-const coolestSoftwareDeveloper = coolestDeveloper2.bind(softDeveloper);
+const displayRubyLanguage = goDeveloper.displayMainLanguage.bind(rubyDeveloper);
 
-coolestSoftwareDeveloper();
-*/
+// displayRubyLanguage();
 
 /*
  3. Solución
 */
 
-// const map = ['a', 'b', 'c'].map.bind([1, 2, 3]);
-// map((el) => console.log(el));
-
 const lodashMap = require('lodash.map');
 
-Array.prototype.map = function (fn) {
-  console.log(`${fn}`);
-  console.log(this);
-  return lodashMap(this, fn);
+Array.prototype.map = function (callback) {
+  console.log('cb', callback.toString());
+
+  console.log('this', this);
+
+  return lodashMap(this, callback);
 };
 
-const newMap = ['a', 'b', 'c'].map.bind([1, 2, 3]);
+const map = ['a', 'b', 'c'].map.bind([1, 2, 3]);
 
-newMap((element) => {
-  console.log(element);
-});
+map((element) => console.log(element));
+
+// - 1 2 3
+// - a b c
+// - An error is thrown
+// - Something else
