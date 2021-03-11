@@ -1,0 +1,34 @@
+<!--
+  Las imágenes son los archivos más pesados que cargamos en nuestra web,
+  pero como podemos hacer la experiencia del usuario menos lenta?Cuando el equipo de Next.js y Google analizaron 6 millones url, se dieron cuenta que la mitad del tamaño de las web son imágenes -->
+
+<!--
+  Imaginemos que cada una de las siguientes imágenes pesa 1MB cada una,
+  y solo se renderiza por pantalla la primera
+  Tiene sentido hacer el request de las otras 2,
+  si quizás el usuario no llega a scrollear para verlas?
+-->
+
+<img src="guitar.png" alt="Guitar" />
+<img src="piano.png" alt="Piano" />
+<img src="drums.png" alt="Drums" />
+<!--
+  Como esto es una posibilidad,
+  lo que haremos es agregar un atributo a todas ellas llamado "loading" con valor "lazy"
+  Gracias a este atributo/valor el navegador decidirá cuando cargar o pedir las imágenes
+  Esto sucederá cuando el usuario este cerca de las mismas, o esten visibles.
+-->
+
+<img src="guitar.png" loading="lazy" alt="Guitar" />
+<img src="piano.png" loading="lazy" alt="Piano" />
+<img src="drums.png" loading="lazy" alt="Drums" />
+
+<!--
+  El valor "eager" es el que tiene este atributo por defecto,
+  cargando todas las imágenes sin importar si estan visibles o no
+-->
+
+<img src="guitar.png" loading="eager" alt="Guitar" />
+<img src="piano.png" loading="eager" alt="Piano" />
+<img src="drums.png" loading="eager" alt="Drums" />
+
