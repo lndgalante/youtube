@@ -5,7 +5,7 @@ Challenge:
 
 Descripción:
   En el siguiente problema, usamos el objeto set y la sintáxis spread para crear un nuevo array.
-  Quee se loguea por pantalla ? Son los items forzados a ser únicos? Estos se ordenan ?
+  Qué se loguea por pantalla ? Son los items forzados a ser únicos? Estos se ordenan ?
 
 Posibles opciones:
   - 5 2
@@ -65,6 +65,10 @@ const pokemons = ['Dragonair', 'Jigglypuff', 'Squirtle', 'Jigglypuff', 'Dragonai
 
 const unrepeatedPokemonsSet = new Set(pokemons);
 
+// console.log('\n ~ unrepeatedPokemonsSet', unrepeatedPokemonsSet);
+
+//        Set(4) { 'Dragonair', 'Jigglypuff', 'Squirtle', 'Dragonite' }
+
 /*
   1. Método Set
     c. Qué sucede con el orden?
@@ -83,29 +87,32 @@ const unrepeatedPokemonsSet = new Set(pokemons);
 
 const unrepeatedPokemonsArray = [...unrepeatedPokemonsSet];
 
+// console.log('\n ~ unrepeatedPokemonsArray', unrepeatedPokemonsArray);
+
 /*
   2. Cómo convertir un Set a un Array?
     b. Alternativa: Array.from()
 */
 
-const unrepeatedPokemonsArray2 = Array.from(unrepeatedPokemonsSet);
+const unrepeateadPokemonsArray2 = Array.from(unrepeatedPokemonsSet);
+
+// console.log('\n ~ unrepeateadPokemonsArray2', unrepeateadPokemonsArray2);
 
 /*
   3. Solución
-*/
-
-/*
-const arr = [...new Set([3, 1, 2, 3, 4])];
-console.log(arr.length, arr[2]);
+    - 5 2
+    - 5 3
+    - 4 2
+    - 4 3
 */
 
 const numbers = [3, 1, 2, 3, 4];
 
-const numbersSet = new Set(numbers);
+const unrepeatedNumbersSet = new Set(numbers);
 
-const unrepeatedNumbers = [...numbersSet];
+const unrepeateadNumbersArray = [...unrepeatedNumbersSet];
 
-console.log(`${unrepeatedNumbers.length} | ${unrepeatedNumbers[2]}`);
+console.log(unrepeateadNumbersArray.length, unrepeateadNumbersArray[2]);
 
 /*
 Extra:
