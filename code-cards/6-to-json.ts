@@ -21,7 +21,7 @@ const json = JSON.stringify(gandalfTheGrey);
 // {"id":23,"name":"Gandalf","message":"🧙🏼 You shall not pass! ⚔️ "}
 
 // Lo bueno sobre toJSON() es que JavaScript maneja la recursividad por nosotros
-// Sin importar que tan nesteado este esta función igualmente se va a ejecutar
+// Sin importar que tan nesteado este "toJSON" en el objeto igualmente se va a ejecutar
 
 const gandalfTheWhite = {
   id: 24,
