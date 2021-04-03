@@ -59,7 +59,8 @@ const fetch = require('isomorphic-fetch');
   Es una función de JavaScript que se ejecuta al momento que es definida.
 
   Para la definición de la función se suele usar funciones anónimas,
-  es decir funciones sin nombre ya que no se vuelven a re-utilizar.
+  es decir funciones sin nombre ya que no se vuelven a re-utilizar,
+  debido a que una vez ejecutadas estas no quedan almacenadas en memoria.
 */
 
 /*
@@ -115,6 +116,11 @@ const fetch = require('isomorphic-fetch');
   const data = await response.json();
   console.log(data);
 })();
+
+/*
+  También se suelen usar en el Module Pattern, pero no es algo que vamos a ver,
+  ya que queda muy fuera del scope del contenido del video.
+*/
 
 /*
   2. HOF: Higher Order Function
