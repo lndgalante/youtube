@@ -26,7 +26,7 @@ Conceptos a entender:
 
   2. HOF: Higher Order Function
     a. Qué es una HOF?
-    b. Cuándo se usan?
+    b. Dónde se suelen usar?
 
   3. Solución
     a. Diagrama https://poet.krasimir.now.sh/e/elegNEmlYTy
@@ -130,7 +130,8 @@ const fetch = require('isomorphic-fetch');
 */
 
 /*
-  Antes definir que es una HOF empezemos por un simple for loop
+  Las Higher Order Functions, o Funciones de Alto Orden provienen del paradigma funcional,
+  pero antes de definir que es una Higher Order Function empezemos por un simple for loop
   Cuantas veces hemos escrito el siguiente loop y ejecutado un bloque de código dentro?
 */
 
@@ -169,11 +170,10 @@ repeat(10, console.log);
 /*
   En nuestra función repeat creamos nuestra primer HOF, ya que toma una función por parámetros.
   Pero una HOF además de recibir una función por parámetros, también puede devolver una función.
-  Nos permiten abstraernos por sobre acciones, y no solo valores.
 */
 
-function greaterThan(n) {
-  return (m) => m > n;
+function greaterThan(value) {
+  return (number) => number > value;
 }
 
 const greatherThan10 = greaterThan(10);
@@ -181,17 +181,18 @@ const greatherThan10 = greaterThan(10);
 console.log(`Is 11 greater than 10? ${greatherThan10(11)}`);
 
 /*
-  Podemos seguir viendo más sobre HOF y conceptos relacionados de FP,
-  pero esto nos basta para poder lograr la solución a nuestro desafío.
+  En resumen una Función de Alto Orden o Higher Order Function es una función que cumple alguna de las siguientes condiciones:
+  a. Toma una función como argumento
+  b. Devuelve una función
 */
 
 /*
   2. HOF: Higher Order Function
-    b. Cuándo se usan?
+    b. Dónde se suelen usar?
 */
 
 /*
-  Las solemos usar en los métodos de los arrays sin darnos cuenta,
+  Los métodos de los arrays sin darnos cuenta son Funciones de Alto Orden,
   como por ejemplo en map, filter, reduce, every, findIndex y otros.
   Estos métodos recien una función por parámetro y la ejecutan por cada ciclo.
 */
