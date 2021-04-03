@@ -20,8 +20,8 @@ Conceptos a entender:
   1. IIFE: Inmediately Invoked Function Expression
     a. Qué es una IIFE?
     b. Sintáxis
-      Declaración de función -> https://poet.krasimir.now.sh/e/7mAMJzN9Mug
-      Arrow function -> https://poet.krasimir.now.sh/e/8abJojLrVCQ
+      - Declaración de función -> https://poet.krasimir.now.sh/e/7mAMJzN9Mug
+      - Arrow function -> https://poet.krasimir.now.sh/e/8abJojLrVCQ
     c. Historia y su uso
 
   2. HOF: Higher Order Function
@@ -112,9 +112,9 @@ const fetch = require('isomorphic-fetch');
 */
 
 (async function () {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
-  const data = await response.json();
-  console.log(data);
+  // const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+  // const data = await response.json();
+  // console.log(data);
 })();
 
 /*
@@ -129,11 +129,92 @@ const fetch = require('isomorphic-fetch');
 */
 
 /*
+  Antes definir que es una HOF empezemos por un simple for loop
+  Cuantas veces hemos escrito el siguiente loop y ejecutado un bloque de código dentro?
+*/
+
+for (let index = 0; index < 10; index++) {
+  console.log(`Número ${index}`);
+}
+
+/*
+  Podemos abstraerlo en una función llamada "repeatLog", que tome por parámetros
+  un n donde este será la cantidad de veces que se llamará a nuestro log.
+*/
+
+function repeatLog(n) {
+  for (let index = 0; index < n; index++) {
+    console.log(`Número ${index}`);
+  }
+}
+
+repeatLog(10);
+
+/*
+  Podemos realizar una mejora donde enviamos otro parámetro
+  para ejecutar nuestra lógica que querramos en cada loop.
+*/
+
+function repeat(n, action) {
+  for (let index = 0; index < n; index++) {
+    action(index);
+  }
+}
+
+repeat(10, (i) => console.log(i));
+
+repeat(10, console.log);
+
+/*
+  En nuestra función repeat creamos nuestra primer HOF, ya que toma una función por parámetros.
+  Pero una HOF además de recibir una función por parámetros, también puede devolver una función.
+  Nos permiten abstraernos por sobre acciones, y no solo valores.
+*/
+
+function greaterThan(n) {
+  return (m) => m > n;
+}
+
+const greatherThan10 = greaterThan(10);
+
+console.log(`Is 11 greater than 10? ${greatherThan10(11)}`);
+
+/*
+  Podemos seguir viendo más sobre HOF y conceptos relacionados de FP,
+  pero esto nos basta para poder lograr la solución a nuestro desafío.
+*/
+
+/*
+  2. HOF: Higher Order Function
+    b. Cuándo se usan?
+*/
+
+/*
+  Las solemos usar en los métodos de los arrays sin darnos cuenta,
+  como por ejemplo en map, filter, reduce, every, findIndex y otros.
+  Estos métodos recien una función por parámetro y la ejecutan por cada ciclo.
+*/
+
+const multipliedNumbers = [1, 2, 3].map((number) => number * 2);
+
+console.log(multipliedNumbers);
+
+/*
   3. Solución
+    a. Diagrama https://poet.krasimir.now.sh/e/elegNEmlYTy
 */
 
 ((fn, val) => {
   return fn(val);
 })(console.log, 5);
 
-// filaA:columnaA:filaB:columnaB
+/*
+  Como vemos que tenemos tanto una IIFE, como una HOF ya que toma fn por parámetros.
+*/
+
+/*
+  - Solo IIFE
+  - Solo HOF
+  - Ambas: IIFE y HOF (X)
+  - Ninguna
+*/
