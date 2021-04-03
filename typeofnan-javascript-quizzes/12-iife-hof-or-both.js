@@ -25,6 +25,8 @@ Conceptos a entender:
     c. Historia y su uso
 
   2. HOF: Higher Order Function
+    a. Qué es una HOF?
+    b. Cuándo se usan?
 
   3. Solución
     a. Diagrama https://poet.krasimir.now.sh/e/elegNEmlYTy
@@ -125,7 +127,6 @@ const fetch = require('isomorphic-fetch');
 /*
   2. HOF: Higher Order Function
     a. Qué es una HOF?
-    b. Cuándo se usan?
 */
 
 /*
