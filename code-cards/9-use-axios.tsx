@@ -36,15 +36,18 @@ configure({ instance });
 // el id de un personaje, por ejemplo: 1 representando a Rick Sanchez
 
 function Character({ id }) {
-  // useAxios nos devuelve un array con 3 elementos pero nos enfocaremos solo en el primero
-  // el primer elemento es un objeto con los datos devueltos por la API,
+  // useAxios nos devuelve un array con 3 elementos
+  // pero nos enfocaremos solo en el primero
+  // siendo este un objeto con los datos devueltos por la API,
   // un booleano de loading y un valor de error
 
   // Se usa el desctructuring para obtener este primer elemento
-  // y a su vez otro destructuring para obtener estas 3 keys: data, loading y error
+  // y a su vez otro destructuring para obtener las keys del objeto
 
-  // Como nosotros ejecutamos configure y le enviamos una instancia con nuestro baseURL
-  // useAxios en esta ocasión va a llamar a: https://rickandmortyapi.com/api/characters/1
+  // Como nosotros ejecutamos configure
+  // y le enviamos una instancia con nuestro baseURL
+  // useAxios en esta ocasión va a llamar a la siguiente url:
+  // https://rickandmortyapi.com/api/characters/1
   const [{ data, loading, error }] = useAxios(`/characters/${id}`);
 
   // Si esta cargando mostramos un mensaje de carga
