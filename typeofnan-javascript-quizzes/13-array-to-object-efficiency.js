@@ -76,13 +76,13 @@ Links Principales:
 
 /*
 1. Performance
-  b. Que ventajas y desventajas nos trae una abstracción?
+  b. Qué ventajas y desventajas nos trae una abstracción?
 */
 
 /*
   Las abstracciones suelen traer como gran ventaja, como la palabra lo dice, abstraernos de un nivel más bajo,
   por ejemplo: una librería de manejo de fechas como dayjs nos trae una API muy amigable pero pagamos una "multa",
-  la multa es un costo mayor en tiempo que puede ser muy indeferenciable en milisegundos.
+  la multa es un costo mayor en tiempo de ejecución por más que sea indeferenciable en milisegundos.
   En resumen una abstracción siempre nos trae una mejor experiencia como desarrolladores pero por el otro lado al abstraernos
   con más código, vamos a pagar esta multa donde nuestra abstracción va a tardar más que sino la tuvieramos.
   Pero como mencionamos antes no tenemos que preocuparnos, al menos que realmente exista un problema real que tengamos que preocuparnos.
@@ -138,11 +138,15 @@ console.timeEnd('for-loop');
   b. Creemos una función benchmark y testiemos el tiempo que toma ejecutar las funciones del punto 2
 */
 
-function benchmark(label, fnToMeasure) {
+function bechnmark(label, fnToMeasure) {
   console.time(label);
   fnToMeasure();
   console.timeEnd(label);
 }
+
+// bechnmark('split-text-by-split-method', () => splitTextBySplitMethod('Barcelona'));
+// bechnmark('split-text-by-spread-method', () => splitTextBySpreadOperator('Barcelona'));
+// bechnmark('split-text-by-array-from-method', () => splitTextByArrayFrom('Barcelona'));
 
 /*
 4. API performance.now()
@@ -155,6 +159,7 @@ function benchmark(label, fnToMeasure) {
 */
 
 const initialTimestamp = performance.now();
+
 const numbers2 = [];
 
 for (let i = 0; i < 1000; i++) {
@@ -164,6 +169,7 @@ for (let i = 0; i < 1000; i++) {
 const finalTimestamp = performance.now();
 
 const elapsedTime = finalTimestamp - initialTimestamp;
+// console.log('\n ~ elapsedTime', elapsedTime);
 
 /*
 4. API performance.now()
@@ -174,13 +180,13 @@ function calculateFunctionsPerformance(...functions) {
   const results = [];
 
   for (const fn of functions) {
-    const name = fn.toString();
+    const name = fn?.name ?? fn.toString();
 
     const startTime = performance.now();
     fn();
-    const finishTime = performance.now();
+    const finalTime = performance.now();
 
-    results.push({ fn: name, elapsedTime: finishTime - startTime });
+    results.push({ fn: name, elapsedTime: finalTime - startTime });
   }
 
   return results;
@@ -192,23 +198,37 @@ const benchmarkResults = calculateFunctionsPerformance(
   () => splitTextByArrayFrom('Barcelona'),
 );
 
+// console.log('\n ~ benchmarkResults', benchmarkResults);
+
 /*
-4. Solución
+  5. Benchmarks Online
+    a. Testiemos el tiempo que toma ejecutar las funciones del punto 2 usando JSBench https://jsbench.me
+*/
+
+/*
+6. Solución
   a. Benchmark en JSBench: https://jsbench.me/zlkndnoubb/1
 */
 
-const arr = [1, 2, 3];
+function reduceLogic() {
+  const arr = [1, 2, 3];
 
-const a = arr.reduce((accumulator, element, index) => ({ ...accumulator, [element]: index }), {});
-
-const b = {};
-
-for (let i = 0; i < arr.length; i++) {
-  b[arr[i]] = i;
+  const a = arr.reduce((acc, el, i) => ({ ...acc, [el]: i }), {});
 }
 
+function forLogic() {
+  const arr = [1, 2, 3];
+
+  const b = {};
+  for (let i = 0; i < arr.length; i++) {
+    b[arr[i]] = i;
+  }
+}
+
+console.log(calculateFunctionsPerformance(reduceLogic, forLogic));
+
 /*
-4. Solución
+6. Solución
   b. Qué hace que la solución elegida sea más rápida?
 */
 
