@@ -24,6 +24,9 @@ Conceptos a entender:
     c. find
 
   2. Cómo funciona el método indexOf()?
+    a. Definición
+    b. Diagrama https://whimsical.com/youtube-UHP1pRc5k3txvDHNdcHLvp@2Ux7TurymR3srym4tVsk
+    c. Ejemplos
 
   3. Solución
 
@@ -40,6 +43,47 @@ Links Principales:
 */
 
 /*
+ 1. Cuál de los siguientes propiedades o métodos pertenece a los strings?
+    a. length
+    b. indexOf
+    c. find
+*/
+
+/*
+La propiedad length y el método indexOf pertenecen a los strings, en cambio el método find pertence a los arrays.
+*/
+
+/*
+  2. Cómo funciona el método indexOf()?
+    a. Definición
+*/
+
+/*
+- El método indexOf nos devuelve el índice de la primer ocurrencia de un valor especificado,
+  si el valor no es encontrado entonces este método va a devolver -1.
+*/
+
+/*
+  2. Cómo funciona el método indexOf()?
+    b. Diagrama https://whimsical.com/youtube-UHP1pRc5k3txvDHNdcHLvp@2Ux7TurymR3srym4tVsk
+*/
+
+/*
+  2. Cómo funciona el método indexOf()?
+    c. Ejemplos
+*/
+
+const phrase = 'The quick brown fox jumps';
+
+console.log(`What's the index for "T"? ${phrase.indexOf('T')}`);
+
+console.log(`What's the index for "The"? ${phrase.indexOf('The')}`);
+
+console.log(`What's the index for "quick"? ${phrase.indexOf('quick')}`);
+
+console.log(`What's the index for "fox"? ${phrase.indexOf('fox')}`);
+
+/*
 3. Solución
 
 Posibles opciones:
@@ -50,3 +94,5 @@ Posibles opciones:
 */
 
 const word = 'The bird is the word';
+
+console.log(`What's the index for "bird"? ${phrase.indexOf('bird')}`);
