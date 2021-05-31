@@ -103,40 +103,40 @@ const phraseIndexes = phrase.split('').map((character) => ({ character }));
 // console.log(`Cuál es el índice de "fox"? ${phrase.indexOf('fox')}`);
 
 /*
-  2. Método indexOf()
-    d. Propiedades y características
+2. Método indexOf()
+d. Propiedades y características
 */
 
 /*
 
-  Propiedades y características:
-  - Case-sensitive
+Propiedades y características:
+- Case-sensitive
 
-  - Se puede usar para chequear si un substring existe en el string
-    Se utilizaba para este caso, antes de que exista el método includes()
+- Se puede usar para chequear si un substring existe en el string
+Se utilizaba para este caso, antes de que exista el método includes()
 
-  - Se le puede proporcionar un segundo parámetro, siendo este un indice,
-    para que busque a partir del indice indicado.
+- Se le puede proporcionar un segundo parámetro, siendo este un indice,
+para que busque a partir del indice indicado.
 
-  - Existe lastIndexOf() que en vez de devolver la primer ocurrencia,
-    nos devuelve la última ocurrencia del substring que estemos buscando
+- Existe lastIndexOf() que en vez de devolver la primer ocurrencia,
+nos devuelve la última ocurrencia del substring que estemos buscando
 
-  - Existe el mismo método en los arrays, para buscar el índice de un elemento
+- Existe el mismo método en los arrays, para buscar el índice de un elemento
 
 */
 
 /*
-  3. Solución
+3. Solución
 
-  Qué método podría usarse para encontrar el valor especificado y devolver la posición del matcheo?
+Qué método podría usarse para encontrar el valor especificado y devolver la posición del matcheo?
 
-  Por ejemplo, qué metodo te dice que "bird" esta en la posición 4 en el siguiente string llamado "word"?
+Por ejemplo, qué metodo te dice que "bird" esta en la posición 4 en el siguiente string llamado "word"?
 
-  Posibles opciones:
-    - length X
-    - indexOf O
-    - find X
-    - none X
+Posibles opciones:
+- length X
+- indexOf O
+- find X
+- none X
 */
 
 const word = 'The bird is the word';
@@ -144,18 +144,20 @@ const word = 'The bird is the word';
 // console.log(`Cuál es el indice de "bird"? ${word.indexOf('bird')}`);
 
 /*
-  4. Extra
-    a. Creemos nuestro propio indexOf() usando arrays y con un flag para que sea case-insensitive
+4. Extra
+a. Creemos nuestro propio indexOf() usando arrays y con un flag para que sea case-insensitive
 */
 
 function indexOf(string, substring, isCaseInsensitive = false) {
   const allWords = [];
 
-  for (let index = 0; index < string.length; index++) {
-    const word = string.slice(index);
-    const parsedWord = isCaseInsensitive ? word.toLowerCase() : word;
+  for (let i = 0; i < string.length; i++) {
+    for (let j = i + 1; j < string.length + 1; j++) {
+      const word = string.slice(i, j);
+      const parsedWord = isCaseInsensitive ? word.toLowerCase() : word;
 
-    allWords.push({ word: parsedWord, index });
+      allWords.push({ word: parsedWord, index: i });
+    }
   }
 
   const parsedSubstring = isCaseInsensitive ? substring.toLowerCase() : substring;
@@ -164,12 +166,12 @@ function indexOf(string, substring, isCaseInsensitive = false) {
   return word?.index ?? -1;
 }
 
-// console.log(indexOf('The quick', 'quick'));
-// console.log(indexOf('The quick', 'Quick', true));
+console.log(indexOf('The quick fox jumped over the lazy dog', 'quick'));
+// console.log(indexOf('The quick', 'The', true));
 
 /*
-  4. Extra
-    b. Creemos nuestro método includes() usando indexOf() nativo
+4. Extra
+b. Creemos nuestro método includes() usando indexOf() nativo
 */
 
 function includesNative(string, substring) {
@@ -186,6 +188,6 @@ function includes(string, substring, isCaseInsensitive = false) {
   return isFound;
 }
 
-console.log(includesNative('The quick', 'quick'));
-console.log(includes('The quick', 'Quick'));
-console.log(includes('The quick', 'Quick', true));
+// console.log(includesNative('The quick', 'quick'));
+// console.log(includes('The quick', 'Quick'));
+// console.log(includes('The quick', 'Quick', true));
