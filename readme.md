@@ -106,8 +106,8 @@ Primer lista:
 
 ## Strings
 
-- [ ] 35. String Methods
-- [ ] 36. Template Literals
+- [x] 35. String Methods
+- [ ] 55. Template Literals
 - [ ] 37. String Interpolation
 - [ ] 38. Palindrome?
 

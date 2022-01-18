@@ -17,6 +17,7 @@ Conceptos a entender:
   1. Qué son los template literals?
     a. Definición
     b. Visualización -> https://poet.krasimir.vercel.app/e/1Zaa680OQHA
+    c. Uso de expresiones
 
   2. Qué es ECMAScript?
     a. Donde puedo ver que incluye cada release?
